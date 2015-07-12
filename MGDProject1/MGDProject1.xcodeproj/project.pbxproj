@@ -16,6 +16,14 @@
 		BABB67511B53111300200CC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BABB67501B53111300200CC9 /* Images.xcassets */; };
 		BABB67541B53111300200CC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABB67521B53111300200CC9 /* LaunchScreen.xib */; };
 		BABB67601B53111300200CC9 /* MGDProject1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BABB675F1B53111300200CC9 /* MGDProject1Tests.m */; };
+		BABB67711B5315C300200CC9 /* StarBrick6.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB67691B5315C300200CC9 /* StarBrick6.png */; };
+		BABB67721B5315C300200CC9 /* MainBall.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB676A1B5315C300200CC9 /* MainBall.png */; };
+		BABB67731B5315C300200CC9 /* StarBrick5.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB676B1B5315C300200CC9 /* StarBrick5.png */; };
+		BABB67741B5315C300200CC9 /* StarBrick4.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB676C1B5315C300200CC9 /* StarBrick4.png */; };
+		BABB67751B5315C300200CC9 /* StarBrick3.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB676D1B5315C300200CC9 /* StarBrick3.png */; };
+		BABB67761B5315C300200CC9 /* StarBrick2.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB676E1B5315C300200CC9 /* StarBrick2.png */; };
+		BABB67771B5315C300200CC9 /* StarBrick1.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB676F1B5315C300200CC9 /* StarBrick1.png */; };
+		BABB67781B5315C300200CC9 /* featherBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BABB67701B5315C300200CC9 /* featherBackground.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,14 @@
 		BABB67591B53111300200CC9 /* MGDProject1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGDProject1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABB675E1B53111300200CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BABB675F1B53111300200CC9 /* MGDProject1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDProject1Tests.m; sourceTree = "<group>"; };
+		BABB67691B5315C300200CC9 /* StarBrick6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarBrick6.png; path = ../StarBrick6.png; sourceTree = "<group>"; };
+		BABB676A1B5315C300200CC9 /* MainBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainBall.png; path = ../MainBall.png; sourceTree = "<group>"; };
+		BABB676B1B5315C300200CC9 /* StarBrick5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarBrick5.png; path = ../StarBrick5.png; sourceTree = "<group>"; };
+		BABB676C1B5315C300200CC9 /* StarBrick4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarBrick4.png; path = ../StarBrick4.png; sourceTree = "<group>"; };
+		BABB676D1B5315C300200CC9 /* StarBrick3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarBrick3.png; path = ../StarBrick3.png; sourceTree = "<group>"; };
+		BABB676E1B5315C300200CC9 /* StarBrick2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarBrick2.png; path = ../StarBrick2.png; sourceTree = "<group>"; };
+		BABB676F1B5315C300200CC9 /* StarBrick1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarBrick1.png; path = ../StarBrick1.png; sourceTree = "<group>"; };
+		BABB67701B5315C300200CC9 /* featherBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = featherBackground.jpg; path = ../featherBackground.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +109,14 @@
 				BABB67481B53111300200CC9 /* GameScene.sks */,
 				BABB674A1B53111300200CC9 /* GameViewController.h */,
 				BABB674B1B53111300200CC9 /* GameViewController.m */,
+				BABB67691B5315C300200CC9 /* StarBrick6.png */,
+				BABB676A1B5315C300200CC9 /* MainBall.png */,
+				BABB676B1B5315C300200CC9 /* StarBrick5.png */,
+				BABB676C1B5315C300200CC9 /* StarBrick4.png */,
+				BABB676D1B5315C300200CC9 /* StarBrick3.png */,
+				BABB676E1B5315C300200CC9 /* StarBrick2.png */,
+				BABB676F1B5315C300200CC9 /* StarBrick1.png */,
+				BABB67701B5315C300200CC9 /* featherBackground.jpg */,
 				BABB674D1B53111300200CC9 /* Main.storyboard */,
 				BABB67501B53111300200CC9 /* Images.xcassets */,
 				BABB67521B53111300200CC9 /* LaunchScreen.xib */,
@@ -208,9 +232,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BABB67541B53111300200CC9 /* LaunchScreen.xib in Resources */,
+				BABB67721B5315C300200CC9 /* MainBall.png in Resources */,
+				BABB67741B5315C300200CC9 /* StarBrick4.png in Resources */,
+				BABB67731B5315C300200CC9 /* StarBrick5.png in Resources */,
+				BABB67761B5315C300200CC9 /* StarBrick2.png in Resources */,
 				BABB67511B53111300200CC9 /* Images.xcassets in Resources */,
 				BABB67491B53111300200CC9 /* GameScene.sks in Resources */,
+				BABB67781B5315C300200CC9 /* featherBackground.jpg in Resources */,
 				BABB674F1B53111300200CC9 /* Main.storyboard in Resources */,
+				BABB67751B5315C300200CC9 /* StarBrick3.png in Resources */,
+				BABB67771B5315C300200CC9 /* StarBrick1.png in Resources */,
+				BABB67711B5315C300200CC9 /* StarBrick6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
