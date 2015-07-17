@@ -1,6 +1,6 @@
 //
 //  GameScene.m
-//  MGD2Project2
+//  MGDProject2
 //
 //  Created by Brenna Pavlinchak on 7/16/15.
 //  Copyright (c) 2015 Brenna Pavlinchak. All rights reserved.
@@ -17,9 +17,9 @@
 
 @end
 
-static const uint32_t brickCategory   = 1; // 00000000000000000000000000000001
-static const uint32_t edgeCategory  = 2; // 00000000000000000000000000000010
-static const uint32_t ballCategory  = 4; // 00000000000000000000000000000100
+static const uint32_t brickCategory = 1;
+static const uint32_t edgeCategory = 2;
+static const uint32_t ballCategory = 4;
 
 @implementation GameScene
 
@@ -28,21 +28,14 @@ static const uint32_t ballCategory  = 4; // 00000000000000000000000000000100
     if (self = [super initWithSize:size])
     {
         /* Setup your scene here */
-        //SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.physicsBody.categoryBitMask = edgeCategory;
         self.physicsWorld.contactDelegate = self;
-        
-        //myLabel.text = @"Ball Bounce";
-        //myLabel.fontSize = 20;
-        //myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-        //CGRectGetMidY(self.frame));
         
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"featherBackground.jpg"];
         background.position = CGPointMake(self.size.width/2, self.size.height/2);
         
         [self addChild:background];
-        //[self addChild:myLabel];
         [self addBricks:size];
         [self addBall:size];
     }
@@ -52,12 +45,18 @@ static const uint32_t ballCategory  = 4; // 00000000000000000000000000000100
 -(void) addBall:(CGSize) size
 {
     SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:@"MainBall.png"];
+    SKSpriteNode *ball2 = [SKSpriteNode spriteNodeWithImageNamed:@"MainBall2.png"];
     
     [self addChild:ball];
+    [self addChild:ball2];
     
     ball.physicsBody = [SKPhysicsBody bodyWithTexture:ball.texture size:ball.texture.size];
     CGPoint ballPoint = CGPointMake(170,600);
     ball.position = ballPoint;
+    
+    ball2.physicsBody = [SKPhysicsBody bodyWithTexture:ball2.texture size:ball2.texture.size];
+    CGPoint ballPoint2 = CGPointMake(110,350);
+    ball2.position = ballPoint2;
     
     ball.physicsBody.friction = 0;
     ball.physicsBody.linearDamping = 0;
@@ -65,6 +64,17 @@ static const uint32_t ballCategory  = 4; // 00000000000000000000000000000100
     ball.physicsBody.categoryBitMask = brickCategory;
     ball.physicsBody.contactTestBitMask = edgeCategory | brickCategory | ballCategory;
     
+    
+    //Move the second ball
+    int minDuration = 2.0;
+    int maxDuration = 20.0;
+    int rangeDuration = maxDuration - minDuration;
+    int actualDuration = (arc4random() % rangeDuration) + minDuration;
+    
+    //Create the actions
+    SKAction *moveBall =  [SKAction moveByX:100.0 y:100.0 duration:actualDuration];
+    SKAction *moveBallDone = [SKAction removeFromParent];               //Not sure if this is working right
+    [ball2 runAction:[SKAction sequence:@[moveBall, moveBallDone]]];    //Sorry the red ball looks gross
 }
 
 -(void) addBricks:(CGSize) size
@@ -75,9 +85,11 @@ static const uint32_t ballCategory  = 4; // 00000000000000000000000000000100
     self.brick4 = [SKSpriteNode spriteNodeWithImageNamed:@"brick4.png"];
     
     self.brick1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.brick1.frame.size];
-    self.brick1.physicsBody.dynamic =  NO;
+    self.brick1.physicsBody.dynamic =  NO;   //Going to change it to try and make all the bricks make sound
     CGPoint brickPoint1 = CGPointMake(115,350);
     self.brick1.position = brickPoint1;
+    _brick1.physicsBody.categoryBitMask = brickCategory;
+    _brick1.physicsBody.contactTestBitMask = edgeCategory | brickCategory | ballCategory;
     
     self.brick2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.brick2.frame.size];
     self.brick2.physicsBody.dynamic =  NO;
@@ -90,6 +102,8 @@ static const uint32_t ballCategory  = 4; // 00000000000000000000000000000100
     self.brick3.physicsBody.dynamic =  NO;
     CGPoint brickPoint3 = CGPointMake(135,150);
     self.brick3.position = brickPoint3;
+    _brick3.physicsBody.categoryBitMask = brickCategory;
+    _brick3.physicsBody.contactTestBitMask = edgeCategory | brickCategory | ballCategory;
     
     self.brick4.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.brick4.frame.size];
     self.brick4.physicsBody.dynamic =  NO;
@@ -102,10 +116,6 @@ static const uint32_t ballCategory  = 4; // 00000000000000000000000000000100
     [self addChild:self.brick2];
     [self addChild:self.brick3];
     [self addChild:self.brick4];
-    
-    //Cant figure out how to make sure it runs and also does the hit
-    //Only have two of the bricks counting as bricks on purpose
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -153,7 +163,7 @@ static const uint32_t ballCategory  = 4; // 00000000000000000000000000000100
         }
         
         self.brick3.position = newBPos2;
-    } //Cant get them to move one at a time, found ideas on how to do, not enough time and also didnt know how to add in. Suggestions?
+    }
     
 }
 
@@ -175,14 +185,14 @@ static const uint32_t ballCategory  = 4; // 00000000000000000000000000000100
     {
         SKAction *playSFX1 = [SKAction playSoundFileNamed:@"blip.caf" waitForCompletion:NO];
         [self runAction:playSFX1];
-        NSLog(@"Bang!");
+        NSLog(@"Bang!"); //Makes sound when the ball hits the edge
     }
     
     if (notBall.categoryBitMask == brickCategory)
     {
         SKAction *playSFX1 = [SKAction playSoundFileNamed:@"brickhit.caf" waitForCompletion:NO];
         [self runAction:playSFX1];
-        NSLog(@"Crash!");
+        NSLog(@"Crash!"); //Makes sound when the ball hits the bricks
     }
     
 }

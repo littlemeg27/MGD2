@@ -7,55 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA624FB71B585E3900A14DCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA624FB61B585E3900A14DCB /* main.m */; };
-		BA624FBA1B585E3900A14DCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA624FB91B585E3900A14DCB /* AppDelegate.m */; };
-		BA624FBD1B585E3900A14DCB /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BA624FBC1B585E3900A14DCB /* GameScene.m */; };
-		BA624FBF1B585E3900A14DCB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BA624FBE1B585E3900A14DCB /* GameScene.sks */; };
-		BA624FC21B585E3900A14DCB /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA624FC11B585E3900A14DCB /* GameViewController.m */; };
-		BA624FC51B585E3900A14DCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA624FC31B585E3900A14DCB /* Main.storyboard */; };
-		BA624FC71B585E3900A14DCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA624FC61B585E3900A14DCB /* Images.xcassets */; };
-		BA624FCA1B585E3900A14DCB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA624FC81B585E3900A14DCB /* LaunchScreen.xib */; };
-		BA624FD61B585E3900A14DCB /* MGD2Project2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA624FD51B585E3900A14DCB /* MGD2Project2Tests.m */; };
+		BA624FEE1B58A21200A14DCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA624FED1B58A21200A14DCB /* main.m */; };
+		BA624FF11B58A21200A14DCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA624FF01B58A21200A14DCB /* AppDelegate.m */; };
+		BA624FF41B58A21200A14DCB /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BA624FF31B58A21200A14DCB /* GameScene.m */; };
+		BA624FF61B58A21200A14DCB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BA624FF51B58A21200A14DCB /* GameScene.sks */; };
+		BA624FF91B58A21200A14DCB /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA624FF81B58A21200A14DCB /* GameViewController.m */; };
+		BA624FFC1B58A21200A14DCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA624FFA1B58A21200A14DCB /* Main.storyboard */; };
+		BA624FFE1B58A21200A14DCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA624FFD1B58A21200A14DCB /* Images.xcassets */; };
+		BA6250011B58A21200A14DCB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA624FFF1B58A21200A14DCB /* LaunchScreen.xib */; };
+		BA62500D1B58A21200A14DCB /* MGDProject2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA62500C1B58A21200A14DCB /* MGDProject2Tests.m */; };
+		BA62501D1B58A4C300A14DCB /* MainBall2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6250161B58A4C300A14DCB /* MainBall2.png */; };
+		BA62501E1B58A4C300A14DCB /* brick4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6250171B58A4C300A14DCB /* brick4.png */; };
+		BA62501F1B58A4C300A14DCB /* brick3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6250181B58A4C300A14DCB /* brick3.png */; };
+		BA6250201B58A4C300A14DCB /* brick2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6250191B58A4C300A14DCB /* brick2.png */; };
+		BA6250211B58A4C300A14DCB /* brick1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA62501A1B58A4C300A14DCB /* brick1.png */; };
+		BA6250221B58A4C300A14DCB /* MainBall.png in Resources */ = {isa = PBXBuildFile; fileRef = BA62501B1B58A4C300A14DCB /* MainBall.png */; };
+		BA6250231B58A4C300A14DCB /* featherBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA62501C1B58A4C300A14DCB /* featherBackground.jpg */; };
+		BA6250261B58A6FA00A14DCB /* blip.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA6250241B58A6FA00A14DCB /* blip.caf */; };
+		BA6250271B58A6FA00A14DCB /* brickhit.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA6250251B58A6FA00A14DCB /* brickhit.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BA624FD01B585E3900A14DCB /* PBXContainerItemProxy */ = {
+		BA6250071B58A21200A14DCB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BA624FA91B585E3900A14DCB /* Project object */;
+			containerPortal = BA624FE01B58A21200A14DCB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BA624FB01B585E3900A14DCB;
-			remoteInfo = MGD2Project2;
+			remoteGlobalIDString = BA624FE71B58A21200A14DCB;
+			remoteInfo = MGDProject2;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA624FB11B585E3900A14DCB /* MGD2Project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGD2Project2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA624FB51B585E3900A14DCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA624FB61B585E3900A14DCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BA624FB81B585E3900A14DCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BA624FB91B585E3900A14DCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BA624FBB1B585E3900A14DCB /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		BA624FBC1B585E3900A14DCB /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		BA624FBE1B585E3900A14DCB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		BA624FC01B585E3900A14DCB /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		BA624FC11B585E3900A14DCB /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		BA624FC41B585E3900A14DCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BA624FC61B585E3900A14DCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BA624FC91B585E3900A14DCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BA624FCF1B585E3900A14DCB /* MGD2Project2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGD2Project2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA624FD41B585E3900A14DCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA624FD51B585E3900A14DCB /* MGD2Project2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGD2Project2Tests.m; sourceTree = "<group>"; };
+		BA624FE81B58A21200A14DCB /* MGDProject2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGDProject2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA624FEC1B58A21200A14DCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA624FED1B58A21200A14DCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BA624FEF1B58A21200A14DCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BA624FF01B58A21200A14DCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BA624FF21B58A21200A14DCB /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		BA624FF31B58A21200A14DCB /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		BA624FF51B58A21200A14DCB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BA624FF71B58A21200A14DCB /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		BA624FF81B58A21200A14DCB /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		BA624FFB1B58A21200A14DCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA624FFD1B58A21200A14DCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BA6250001B58A21200A14DCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BA6250061B58A21200A14DCB /* MGDProject2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGDProject2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA62500B1B58A21200A14DCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA62500C1B58A21200A14DCB /* MGDProject2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDProject2Tests.m; sourceTree = "<group>"; };
+		BA6250161B58A4C300A14DCB /* MainBall2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainBall2.png; path = ../MainBall2.png; sourceTree = "<group>"; };
+		BA6250171B58A4C300A14DCB /* brick4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brick4.png; path = ../brick4.png; sourceTree = "<group>"; };
+		BA6250181B58A4C300A14DCB /* brick3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brick3.png; path = ../brick3.png; sourceTree = "<group>"; };
+		BA6250191B58A4C300A14DCB /* brick2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brick2.png; path = ../brick2.png; sourceTree = "<group>"; };
+		BA62501A1B58A4C300A14DCB /* brick1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brick1.png; path = ../brick1.png; sourceTree = "<group>"; };
+		BA62501B1B58A4C300A14DCB /* MainBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainBall.png; path = ../MainBall.png; sourceTree = "<group>"; };
+		BA62501C1B58A4C300A14DCB /* featherBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = featherBackground.jpg; path = ../featherBackground.jpg; sourceTree = "<group>"; };
+		BA6250241B58A6FA00A14DCB /* blip.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = blip.caf; path = ../blip.caf; sourceTree = "<group>"; };
+		BA6250251B58A6FA00A14DCB /* brickhit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = brickhit.caf; path = ../brickhit.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BA624FAE1B585E3900A14DCB /* Frameworks */ = {
+		BA624FE51B58A21200A14DCB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA624FCC1B585E3900A14DCB /* Frameworks */ = {
+		BA6250031B58A21200A14DCB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,64 +83,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BA624FA81B585E3900A14DCB = {
+		BA624FDF1B58A21200A14DCB = {
 			isa = PBXGroup;
 			children = (
-				BA624FB31B585E3900A14DCB /* MGD2Project2 */,
-				BA624FD21B585E3900A14DCB /* MGD2Project2Tests */,
-				BA624FB21B585E3900A14DCB /* Products */,
+				BA624FEA1B58A21200A14DCB /* MGDProject2 */,
+				BA6250091B58A21200A14DCB /* MGDProject2Tests */,
+				BA624FE91B58A21200A14DCB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BA624FB21B585E3900A14DCB /* Products */ = {
+		BA624FE91B58A21200A14DCB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA624FB11B585E3900A14DCB /* MGD2Project2.app */,
-				BA624FCF1B585E3900A14DCB /* MGD2Project2Tests.xctest */,
+				BA624FE81B58A21200A14DCB /* MGDProject2.app */,
+				BA6250061B58A21200A14DCB /* MGDProject2Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BA624FB31B585E3900A14DCB /* MGD2Project2 */ = {
+		BA624FEA1B58A21200A14DCB /* MGDProject2 */ = {
 			isa = PBXGroup;
 			children = (
-				BA624FB81B585E3900A14DCB /* AppDelegate.h */,
-				BA624FB91B585E3900A14DCB /* AppDelegate.m */,
-				BA624FBB1B585E3900A14DCB /* GameScene.h */,
-				BA624FBC1B585E3900A14DCB /* GameScene.m */,
-				BA624FBE1B585E3900A14DCB /* GameScene.sks */,
-				BA624FC01B585E3900A14DCB /* GameViewController.h */,
-				BA624FC11B585E3900A14DCB /* GameViewController.m */,
-				BA624FC31B585E3900A14DCB /* Main.storyboard */,
-				BA624FC61B585E3900A14DCB /* Images.xcassets */,
-				BA624FC81B585E3900A14DCB /* LaunchScreen.xib */,
-				BA624FB41B585E3900A14DCB /* Supporting Files */,
+				BA624FEF1B58A21200A14DCB /* AppDelegate.h */,
+				BA624FF01B58A21200A14DCB /* AppDelegate.m */,
+				BA624FF21B58A21200A14DCB /* GameScene.h */,
+				BA624FF31B58A21200A14DCB /* GameScene.m */,
+				BA624FF51B58A21200A14DCB /* GameScene.sks */,
+				BA624FF71B58A21200A14DCB /* GameViewController.h */,
+				BA624FF81B58A21200A14DCB /* GameViewController.m */,
+				BA6250161B58A4C300A14DCB /* MainBall2.png */,
+				BA6250171B58A4C300A14DCB /* brick4.png */,
+				BA6250181B58A4C300A14DCB /* brick3.png */,
+				BA6250191B58A4C300A14DCB /* brick2.png */,
+				BA62501A1B58A4C300A14DCB /* brick1.png */,
+				BA62501B1B58A4C300A14DCB /* MainBall.png */,
+				BA62501C1B58A4C300A14DCB /* featherBackground.jpg */,
+				BA6250241B58A6FA00A14DCB /* blip.caf */,
+				BA6250251B58A6FA00A14DCB /* brickhit.caf */,
+				BA624FFA1B58A21200A14DCB /* Main.storyboard */,
+				BA624FFD1B58A21200A14DCB /* Images.xcassets */,
+				BA624FFF1B58A21200A14DCB /* LaunchScreen.xib */,
+				BA624FEB1B58A21200A14DCB /* Supporting Files */,
 			);
-			path = MGD2Project2;
+			path = MGDProject2;
 			sourceTree = "<group>";
 		};
-		BA624FB41B585E3900A14DCB /* Supporting Files */ = {
+		BA624FEB1B58A21200A14DCB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BA624FB51B585E3900A14DCB /* Info.plist */,
-				BA624FB61B585E3900A14DCB /* main.m */,
+				BA624FEC1B58A21200A14DCB /* Info.plist */,
+				BA624FED1B58A21200A14DCB /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BA624FD21B585E3900A14DCB /* MGD2Project2Tests */ = {
+		BA6250091B58A21200A14DCB /* MGDProject2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				BA624FD51B585E3900A14DCB /* MGD2Project2Tests.m */,
-				BA624FD31B585E3900A14DCB /* Supporting Files */,
+				BA62500C1B58A21200A14DCB /* MGDProject2Tests.m */,
+				BA62500A1B58A21200A14DCB /* Supporting Files */,
 			);
-			path = MGD2Project2Tests;
+			path = MGDProject2Tests;
 			sourceTree = "<group>";
 		};
-		BA624FD31B585E3900A14DCB /* Supporting Files */ = {
+		BA62500A1B58A21200A14DCB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BA624FD41B585E3900A14DCB /* Info.plist */,
+				BA62500B1B58A21200A14DCB /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -130,60 +157,60 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BA624FB01B585E3900A14DCB /* MGD2Project2 */ = {
+		BA624FE71B58A21200A14DCB /* MGDProject2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA624FD91B585E3900A14DCB /* Build configuration list for PBXNativeTarget "MGD2Project2" */;
+			buildConfigurationList = BA6250101B58A21200A14DCB /* Build configuration list for PBXNativeTarget "MGDProject2" */;
 			buildPhases = (
-				BA624FAD1B585E3900A14DCB /* Sources */,
-				BA624FAE1B585E3900A14DCB /* Frameworks */,
-				BA624FAF1B585E3900A14DCB /* Resources */,
+				BA624FE41B58A21200A14DCB /* Sources */,
+				BA624FE51B58A21200A14DCB /* Frameworks */,
+				BA624FE61B58A21200A14DCB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MGD2Project2;
-			productName = MGD2Project2;
-			productReference = BA624FB11B585E3900A14DCB /* MGD2Project2.app */;
+			name = MGDProject2;
+			productName = MGDProject2;
+			productReference = BA624FE81B58A21200A14DCB /* MGDProject2.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BA624FCE1B585E3900A14DCB /* MGD2Project2Tests */ = {
+		BA6250051B58A21200A14DCB /* MGDProject2Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA624FDC1B585E3900A14DCB /* Build configuration list for PBXNativeTarget "MGD2Project2Tests" */;
+			buildConfigurationList = BA6250131B58A21200A14DCB /* Build configuration list for PBXNativeTarget "MGDProject2Tests" */;
 			buildPhases = (
-				BA624FCB1B585E3900A14DCB /* Sources */,
-				BA624FCC1B585E3900A14DCB /* Frameworks */,
-				BA624FCD1B585E3900A14DCB /* Resources */,
+				BA6250021B58A21200A14DCB /* Sources */,
+				BA6250031B58A21200A14DCB /* Frameworks */,
+				BA6250041B58A21200A14DCB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BA624FD11B585E3900A14DCB /* PBXTargetDependency */,
+				BA6250081B58A21200A14DCB /* PBXTargetDependency */,
 			);
-			name = MGD2Project2Tests;
-			productName = MGD2Project2Tests;
-			productReference = BA624FCF1B585E3900A14DCB /* MGD2Project2Tests.xctest */;
+			name = MGDProject2Tests;
+			productName = MGDProject2Tests;
+			productReference = BA6250061B58A21200A14DCB /* MGDProject2Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BA624FA91B585E3900A14DCB /* Project object */ = {
+		BA624FE01B58A21200A14DCB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Brenna Pavlinchak";
 				TargetAttributes = {
-					BA624FB01B585E3900A14DCB = {
+					BA624FE71B58A21200A14DCB = {
 						CreatedOnToolsVersion = 6.4;
 					};
-					BA624FCE1B585E3900A14DCB = {
+					BA6250051B58A21200A14DCB = {
 						CreatedOnToolsVersion = 6.4;
-						TestTargetID = BA624FB01B585E3900A14DCB;
+						TestTargetID = BA624FE71B58A21200A14DCB;
 					};
 				};
 			};
-			buildConfigurationList = BA624FAC1B585E3900A14DCB /* Build configuration list for PBXProject "MGD2Project2" */;
+			buildConfigurationList = BA624FE31B58A21200A14DCB /* Build configuration list for PBXProject "MGDProject2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -191,30 +218,39 @@
 				en,
 				Base,
 			);
-			mainGroup = BA624FA81B585E3900A14DCB;
-			productRefGroup = BA624FB21B585E3900A14DCB /* Products */;
+			mainGroup = BA624FDF1B58A21200A14DCB;
+			productRefGroup = BA624FE91B58A21200A14DCB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA624FB01B585E3900A14DCB /* MGD2Project2 */,
-				BA624FCE1B585E3900A14DCB /* MGD2Project2Tests */,
+				BA624FE71B58A21200A14DCB /* MGDProject2 */,
+				BA6250051B58A21200A14DCB /* MGDProject2Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BA624FAF1B585E3900A14DCB /* Resources */ = {
+		BA624FE61B58A21200A14DCB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA624FCA1B585E3900A14DCB /* LaunchScreen.xib in Resources */,
-				BA624FC71B585E3900A14DCB /* Images.xcassets in Resources */,
-				BA624FBF1B585E3900A14DCB /* GameScene.sks in Resources */,
-				BA624FC51B585E3900A14DCB /* Main.storyboard in Resources */,
+				BA62501E1B58A4C300A14DCB /* brick4.png in Resources */,
+				BA62501D1B58A4C300A14DCB /* MainBall2.png in Resources */,
+				BA6250231B58A4C300A14DCB /* featherBackground.jpg in Resources */,
+				BA6250261B58A6FA00A14DCB /* blip.caf in Resources */,
+				BA6250201B58A4C300A14DCB /* brick2.png in Resources */,
+				BA6250271B58A6FA00A14DCB /* brickhit.caf in Resources */,
+				BA6250011B58A21200A14DCB /* LaunchScreen.xib in Resources */,
+				BA624FFE1B58A21200A14DCB /* Images.xcassets in Resources */,
+				BA6250221B58A4C300A14DCB /* MainBall.png in Resources */,
+				BA62501F1B58A4C300A14DCB /* brick3.png in Resources */,
+				BA6250211B58A4C300A14DCB /* brick1.png in Resources */,
+				BA624FF61B58A21200A14DCB /* GameScene.sks in Resources */,
+				BA624FFC1B58A21200A14DCB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA624FCD1B585E3900A14DCB /* Resources */ = {
+		BA6250041B58A21200A14DCB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,48 +260,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BA624FAD1B585E3900A14DCB /* Sources */ = {
+		BA624FE41B58A21200A14DCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA624FC21B585E3900A14DCB /* GameViewController.m in Sources */,
-				BA624FBA1B585E3900A14DCB /* AppDelegate.m in Sources */,
-				BA624FBD1B585E3900A14DCB /* GameScene.m in Sources */,
-				BA624FB71B585E3900A14DCB /* main.m in Sources */,
+				BA624FF91B58A21200A14DCB /* GameViewController.m in Sources */,
+				BA624FF11B58A21200A14DCB /* AppDelegate.m in Sources */,
+				BA624FF41B58A21200A14DCB /* GameScene.m in Sources */,
+				BA624FEE1B58A21200A14DCB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA624FCB1B585E3900A14DCB /* Sources */ = {
+		BA6250021B58A21200A14DCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA624FD61B585E3900A14DCB /* MGD2Project2Tests.m in Sources */,
+				BA62500D1B58A21200A14DCB /* MGDProject2Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BA624FD11B585E3900A14DCB /* PBXTargetDependency */ = {
+		BA6250081B58A21200A14DCB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA624FB01B585E3900A14DCB /* MGD2Project2 */;
-			targetProxy = BA624FD01B585E3900A14DCB /* PBXContainerItemProxy */;
+			target = BA624FE71B58A21200A14DCB /* MGDProject2 */;
+			targetProxy = BA6250071B58A21200A14DCB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BA624FC31B585E3900A14DCB /* Main.storyboard */ = {
+		BA624FFA1B58A21200A14DCB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BA624FC41B585E3900A14DCB /* Base */,
+				BA624FFB1B58A21200A14DCB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BA624FC81B585E3900A14DCB /* LaunchScreen.xib */ = {
+		BA624FFF1B58A21200A14DCB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BA624FC91B585E3900A14DCB /* Base */,
+				BA6250001B58A21200A14DCB /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -273,7 +309,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BA624FD71B585E3900A14DCB /* Debug */ = {
+		BA62500E1B58A21200A14DCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -316,7 +352,7 @@
 			};
 			name = Debug;
 		};
-		BA624FD81B585E3900A14DCB /* Release */ = {
+		BA62500F1B58A21200A14DCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -353,27 +389,27 @@
 			};
 			name = Release;
 		};
-		BA624FDA1B585E3900A14DCB /* Debug */ = {
+		BA6250111B58A21200A14DCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MGD2Project2/Info.plist;
+				INFOPLIST_FILE = MGDProject2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		BA624FDB1B585E3900A14DCB /* Release */ = {
+		BA6250121B58A21200A14DCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MGD2Project2/Info.plist;
+				INFOPLIST_FILE = MGDProject2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		BA624FDD1B585E3900A14DCB /* Debug */ = {
+		BA6250141B58A21200A14DCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -385,14 +421,14 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = MGD2Project2Tests/Info.plist;
+				INFOPLIST_FILE = MGDProject2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MGD2Project2.app/MGD2Project2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MGDProject2.app/MGDProject2";
 			};
 			name = Debug;
 		};
-		BA624FDE1B585E3900A14DCB /* Release */ = {
+		BA6250151B58A21200A14DCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -400,42 +436,44 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = MGD2Project2Tests/Info.plist;
+				INFOPLIST_FILE = MGDProject2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MGD2Project2.app/MGD2Project2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MGDProject2.app/MGDProject2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA624FAC1B585E3900A14DCB /* Build configuration list for PBXProject "MGD2Project2" */ = {
+		BA624FE31B58A21200A14DCB /* Build configuration list for PBXProject "MGDProject2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BA624FD71B585E3900A14DCB /* Debug */,
-				BA624FD81B585E3900A14DCB /* Release */,
+				BA62500E1B58A21200A14DCB /* Debug */,
+				BA62500F1B58A21200A14DCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA624FD91B585E3900A14DCB /* Build configuration list for PBXNativeTarget "MGD2Project2" */ = {
+		BA6250101B58A21200A14DCB /* Build configuration list for PBXNativeTarget "MGDProject2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BA624FDA1B585E3900A14DCB /* Debug */,
-				BA624FDB1B585E3900A14DCB /* Release */,
+				BA6250111B58A21200A14DCB /* Debug */,
+				BA6250121B58A21200A14DCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		BA624FDC1B585E3900A14DCB /* Build configuration list for PBXNativeTarget "MGD2Project2Tests" */ = {
+		BA6250131B58A21200A14DCB /* Build configuration list for PBXNativeTarget "MGDProject2Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BA624FDD1B585E3900A14DCB /* Debug */,
-				BA624FDE1B585E3900A14DCB /* Release */,
+				BA6250141B58A21200A14DCB /* Debug */,
+				BA6250151B58A21200A14DCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BA624FA91B585E3900A14DCB /* Project object */;
+	rootObject = BA624FE01B58A21200A14DCB /* Project object */;
 }

@@ -1,6 +1,6 @@
 //
-//  MGD2Project2Tests.m
-//  MGD2Project2Tests
+//  MGDProject2Tests.m
+//  MGDProject2Tests
 //
 //  Created by Brenna Pavlinchak on 7/16/15.
 //  Copyright (c) 2015 Brenna Pavlinchak. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface MGD2Project2Tests : XCTestCase
+@interface MGDProject2Tests : XCTestCase
 
 @end
 
-@implementation MGD2Project2Tests
+@implementation MGDProject2Tests
 
 - (void)setUp {
     [super setUp];
