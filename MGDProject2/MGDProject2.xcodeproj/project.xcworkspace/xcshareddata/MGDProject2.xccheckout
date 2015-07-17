@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5DDD20BC-2A84-406D-96DA-BAED7A9AFBA4</string>
+	<string>45743AC9-E9C8-4403-9600-551294F3A303</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>MGDProject2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6DCB8E7D545BD0727F8EE37E58D46FACC58C2CB1</key>
 		<string>https://github.com/littlemeg27/MGD2.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MGD2Project2/MGD2Project2.xcodeproj/project.xcworkspace</string>
+	<string>MGDProject2/MGDProject2.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6DCB8E7D545BD0727F8EE37E58D46FACC58C2CB1</key>
