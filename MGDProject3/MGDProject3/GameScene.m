@@ -12,18 +12,50 @@
 
 @implementation GameScene
 
--(void)didMoveToView:(SKView *)view
+    //FMMParallaxNode *_parallaxNodeBackgrounds;
+    //FMMParallaxNode *_parallaxSpaceDust;
+    
+    CMMotionManager *_motionManager;
+    
+    /*
+    NSMutableArray *_asteroids;
+    int _nextAsteroid;
+    double _nextAsteroidSpawn;
+    
+    NSMutableArray *_shipLasers;
+    int _nextShipLaser;
+    
+    int _lives;
+    double _gameOverTime;
+    bool _gameOver;
+    
+    AVAudioPlayer *_backgroundAudioPlayer;*/
+
+
+-(id)initWithSize:(CGSize)size
 {
-    /* Setup your scene here */
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    
-    myLabel.text = @"Hello, World!";
-    myLabel.fontSize = 65;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMidY(self.frame));
-    
-    [self addChild:myLabel];
+    if (self = [super initWithSize:size])
+    {
+        /* Setup your scene here */
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        //self.physicsBody.categoryBitMask = edgeCategory;
+        self.physicsWorld.contactDelegate = self; //Might need for later
+        
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"featherBackground.jpg"];
+        background.position = CGPointMake(self.size.width/2, self.size.height/2);
+        
+        [self addChild:background];
+        [self addBall:size];
+        [self startTheGame];
+    }
+    return self;
 }
+
+-(void) addBall:(CGSize) size
+{
+    SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:@"MainBall.png"];
+}
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
