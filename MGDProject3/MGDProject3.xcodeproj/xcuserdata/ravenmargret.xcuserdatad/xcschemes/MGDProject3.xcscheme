@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA5C52E91B5DC6E6007273F2"
-               BuildableName = "MGD2Project3.app"
-               BlueprintName = "MGD2Project3"
-               ReferencedContainer = "container:MGD2Project3.xcodeproj">
+               BlueprintIdentifier = "BA5C53201B5DE4E5007273F2"
+               BuildableName = "MGDProject3.app"
+               BlueprintName = "MGDProject3"
+               ReferencedContainer = "container:MGDProject3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA5C53071B5DC6E6007273F2"
-               BuildableName = "MGD2Project3Tests.xctest"
-               BlueprintName = "MGD2Project3Tests"
-               ReferencedContainer = "container:MGD2Project3.xcodeproj">
+               BlueprintIdentifier = "BA5C533E1B5DE4E5007273F2"
+               BuildableName = "MGDProject3Tests.xctest"
+               BlueprintName = "MGDProject3Tests"
+               ReferencedContainer = "container:MGDProject3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA5C53071B5DC6E6007273F2"
-               BuildableName = "MGD2Project3Tests.xctest"
-               BlueprintName = "MGD2Project3Tests"
-               ReferencedContainer = "container:MGD2Project3.xcodeproj">
+               BlueprintIdentifier = "BA5C533E1B5DE4E5007273F2"
+               BuildableName = "MGDProject3Tests.xctest"
+               BlueprintName = "MGDProject3Tests"
+               ReferencedContainer = "container:MGDProject3.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BA5C52E91B5DC6E6007273F2"
-            BuildableName = "MGD2Project3.app"
-            BlueprintName = "MGD2Project3"
-            ReferencedContainer = "container:MGD2Project3.xcodeproj">
+            BlueprintIdentifier = "BA5C53201B5DE4E5007273F2"
+            BuildableName = "MGDProject3.app"
+            BlueprintName = "MGDProject3"
+            ReferencedContainer = "container:MGDProject3.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BA5C52E91B5DC6E6007273F2"
-            BuildableName = "MGD2Project3.app"
-            BlueprintName = "MGD2Project3"
-            ReferencedContainer = "container:MGD2Project3.xcodeproj">
+            BlueprintIdentifier = "BA5C53201B5DE4E5007273F2"
+            BuildableName = "MGDProject3.app"
+            BlueprintName = "MGDProject3"
+            ReferencedContainer = "container:MGDProject3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BA5C52E91B5DC6E6007273F2"
-            BuildableName = "MGD2Project3.app"
-            BlueprintName = "MGD2Project3"
-            ReferencedContainer = "container:MGD2Project3.xcodeproj">
+            BlueprintIdentifier = "BA5C53201B5DE4E5007273F2"
+            BuildableName = "MGDProject3.app"
+            BlueprintName = "MGDProject3"
+            ReferencedContainer = "container:MGDProject3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,16 +1,19 @@
 //
 //  GameScene.m
-//  MGD2Project3
+//  MGDProject3
 //
 //  Created by Brenna Pavlinchak on 7/20/15.
 //  Copyright (c) 2015 Brenna Pavlinchak. All rights reserved.
 //
 
+@import CoreMotion;
+
 #import "GameScene.h"
 
 @implementation GameScene
 
--(void)didMoveToView:(SKView *)view {
+-(void)didMoveToView:(SKView *)view
+{
     /* Setup your scene here */
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     
@@ -22,7 +25,8 @@
     [self addChild:myLabel];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
     /* Called when a touch begins */
     
     for (UITouch *touch in touches) {

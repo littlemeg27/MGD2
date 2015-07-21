@@ -1,6 +1,6 @@
 //
 //  GameViewController.h
-//  MGD2Project3
+//  MGDProject3
 //
 
 //  Copyright (c) 2015 Brenna Pavlinchak. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  main.m
-//  MGD2Project3
+//  MGDProject3
 //
 //  Created by Brenna Pavlinchak on 7/20/15.
 //  Copyright (c) 2015 Brenna Pavlinchak. All rights reserved.

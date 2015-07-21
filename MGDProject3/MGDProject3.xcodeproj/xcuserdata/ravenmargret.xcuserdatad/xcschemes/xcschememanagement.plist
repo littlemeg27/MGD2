@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MGD2Project3.xcscheme</key>
+		<key>MGDProject3.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>BA5C52E91B5DC6E6007273F2</key>
+		<key>BA5C53201B5DE4E5007273F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA5C53071B5DC6E6007273F2</key>
+		<key>BA5C533E1B5DE4E5007273F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
