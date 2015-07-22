@@ -6,9 +6,15 @@
 //  Copyright (c) 2015 Brenna Pavlinchak. All rights reserved.
 //
 
-@import CoreMotion;
-
 #import "GameScene.h"
+
+@interface GameScene ()
+
+@property (nonatomic) SKSpriteNode *ball;
+
+@end
+
+@import CoreMotion;
 
 @implementation GameScene
 
@@ -27,14 +33,27 @@
         motionManager = [[CMMotionManager alloc] init];
         
         [self addBall:size];
+        [self startGame];
     }
     return self;
 }
 
 -(void) addBall:(CGSize) size
 {
-    SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:@"MainBall.png"];
-    [self addChild:ball];
+    self.ball = [SKSpriteNode spriteNodeWithImageNamed:@"MainBall.png"];
+    [self addChild:self.ball];
+}
+
+- (void)startGame
+{
+    self.ball.hidden = NO;   //reset ball position for new game
+    self.ball.physicsBody = [SKPhysicsBody bodyWithTexture:self.ball.texture size:self.ball.texture.size];
+    CGPoint ballPoint = CGPointMake(170,600);
+    self.ball.position = ballPoint;
+    
+    //setup to handle accelerometer readings using CoreMotion Framework
+    //[self startMonitoringAcceleration]; //Yeah not sure
+    
 }
 
 
