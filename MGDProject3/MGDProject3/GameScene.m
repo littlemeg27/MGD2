@@ -46,7 +46,7 @@
         
         [self addChild:background];
         [self addBall:size];
-        [self startTheGame];
+        [self startMovement];
     }
     return self;
 }
@@ -56,25 +56,38 @@
     SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:@"MainBall.png"];
 }
 
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)startMovement
 {
-    /* Called when a touch begins */
+    ball.hidden = NO;
+    //reset ship position for new game
+    ball.position = CGPointMake(self.frame.size.width * 0.1, CGRectGetMidY(self.frame));
     
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.xScale = 0.5;
-        sprite.yScale = 0.5;
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+    //setup to handle accelerometer readings using CoreMotion Framework
+    [self startMonitoringAcceleration];
+    
+}
+
+- (void)startMonitoringAcceleration
+{
+    if (_motionManager.accelerometerAvailable) {
+        [_motionManager startAccelerometerUpdates];
+        NSLog(@"accelerometer updates on...");
+    }
+}
+
+- (void)stopMonitoringAcceleration
+{
+    if (_motionManager.accelerometerAvailable && _motionManager.accelerometerActive) {
+        [_motionManager stopAccelerometerUpdates];
+        NSLog(@"accelerometer updates off...");
+    }
+}
+
+- (void)updateShipPositionFromMotionManager
+{
+    CMAccelerometerData* data = _motionManager.accelerometerData;
+    if (fabs(data.acceleration.x) > 0.2) {
+        NSLog(@"acceleration value = %f",data.acceleration.x);
     }
 }
 
