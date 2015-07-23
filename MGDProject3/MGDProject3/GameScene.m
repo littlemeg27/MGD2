@@ -55,7 +55,7 @@
     self.ball.physicsBody.mass = 0.02; //Give mass
     
     //setup to handle accelerometer readings using CoreMotion Framework
-    //[self startMonitoringAcceleration]; //Yeah not sure
+    [self startAccelerationOn]; //Yeah not sure
     
 }
 
@@ -82,8 +82,8 @@
     CMAccelerometerData* data = motion.accelerometerData;
     if (fabs(data.acceleration.x) > 0.2)
     {
-        NSLog(@"acceleration value = %f",data.acceleration.x);
-        [self.ball.physicsBody applyForce:CGVectorMake(0.0, 40.0 * data.acceleration.x)];
+        NSLog(@"acceleration value = %f", data.acceleration.x);
+        [self.ball.physicsBody applyForce:CGVectorMake(40.0 * data.acceleration.x, 40.0 * data.acceleration.y)];
     }
 }
 
