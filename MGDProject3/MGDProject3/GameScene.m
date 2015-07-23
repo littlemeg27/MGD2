@@ -83,7 +83,7 @@
     if (fabs(data.acceleration.x) > 0.2)
     {
         NSLog(@"acceleration value = %f", data.acceleration.x);
-        [self.ball.physicsBody applyForce:CGVectorMake(40.0 * data.acceleration.x, 40.0 * data.acceleration.y)];
+        [self.ball.physicsBody applyForce:CGVectorMake(50.0 * data.acceleration.x, 50.0 * data.acceleration.y)];
     }
 }
 
