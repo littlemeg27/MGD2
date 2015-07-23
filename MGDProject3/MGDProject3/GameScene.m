@@ -40,7 +40,7 @@
 
 -(void) addBall:(CGSize) size
 {
-    self.ball = [SKSpriteNode spriteNodeWithImageNamed:@"MainBall.png"];
+    self.ball = [SKSpriteNode spriteNodeWithImageNamed:@"MazeBall.png"];
     [self addChild:self.ball];
 }
 
@@ -49,7 +49,10 @@
     self.ball.hidden = NO;   //reset ball position for new game
     self.ball.physicsBody = [SKPhysicsBody bodyWithTexture:self.ball.texture size:self.ball.texture.size];
     CGPoint ballPoint = CGPointMake(170,600);
-    self.ball.position = ballPoint;
+    self.ball.position = ballPoint; 
+    self.ball.physicsBody.dynamic = YES; //Not sitting still
+    self.ball.physicsBody.affectedByGravity = NO; //Not affected
+    self.ball.physicsBody.mass = 0.02; //Give mass
     
     //setup to handle accelerometer readings using CoreMotion Framework
     //[self startMonitoringAcceleration]; //Yeah not sure
@@ -74,18 +77,22 @@
     }
 }
 
-- (void)updateShipPositionFromMotionManager
+- (void)updateBallPosition
 {
     CMAccelerometerData* data = motion.accelerometerData;
     if (fabs(data.acceleration.x) > 0.2)
     {
         NSLog(@"acceleration value = %f",data.acceleration.x);
+        [self.ball.physicsBody applyForce:CGVectorMake(0.0, 40.0 * data.acceleration.x)];
     }
 }
 
--(void)update:(CFTimeInterval)currentTime
+-(void)update:(NSTimeInterval)currentTime
 {
     /* Called before each frame is rendered */
+    
+    //Update the ball position
+    [self updateBallPosition];
 }
 
 @end
