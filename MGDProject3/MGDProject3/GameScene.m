@@ -18,7 +18,7 @@
 
 @implementation GameScene
 
-    CMMotionManager *motionManager; //Gets in the four types of motion
+    CMMotionManager *motion; //Gets in the four types of motion
 
 -(id)initWithSize:(CGSize)size
 {
@@ -30,7 +30,7 @@
         //self.physicsBody.categoryBitMask = edgeCategory;
         self.physicsWorld.contactDelegate = self; //Might need for later
     
-        motionManager = [[CMMotionManager alloc] init];
+        motion = [[CMMotionManager alloc] init];
         
         [self addBall:size];
         [self startGame];
@@ -56,6 +56,32 @@
     
 }
 
+- (void)startAccelerationOn
+{
+    if (motion.accelerometerAvailable)
+    {
+        [motion startAccelerometerUpdates];
+        NSLog(@"on");
+    }
+}
+
+- (void)stopAccelerationOff
+{
+    if (motion.accelerometerAvailable && motion.accelerometerActive)
+    {
+        [motion stopAccelerometerUpdates];
+        NSLog(@"off");
+    }
+}
+
+- (void)updateShipPositionFromMotionManager
+{
+    CMAccelerometerData* data = motion.accelerometerData;
+    if (fabs(data.acceleration.x) > 0.2)
+    {
+        NSLog(@"acceleration value = %f",data.acceleration.x);
+    }
+}
 
 -(void)update:(CFTimeInterval)currentTime
 {
