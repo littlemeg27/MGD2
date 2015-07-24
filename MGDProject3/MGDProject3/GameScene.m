@@ -11,6 +11,7 @@
 @interface GameScene ()
 
 @property (nonatomic) SKSpriteNode *ball;
+@property (nonatomic) SKSpriteNode *topWall;
 
 @end
 
@@ -33,6 +34,8 @@
         motion = [[CMMotionManager alloc] init];
         
         [self addBall:size];
+        [self addWalls:size];
+        [self addHoles:size];
         [self startGame];
     }
     return self;
@@ -44,11 +47,27 @@
     [self addChild:self.ball];
 }
 
+-(void) addWalls:(CGSize) size
+{
+    self.topWall = [SKSpriteNode spriteNodeWithImageNamed:@"TopWall.png"];
+    CGPoint topWallPoint = CGPointMake(170,630);
+    self.topWall.position = topWallPoint;
+    [self addChild:self.topWall];
+}
+
+
+-(void) addHoles:(CGSize) size
+{
+    //self.ball = [SKSpriteNode spriteNodeWithImageNamed:@"MazeBall.png"];
+    //[self addChild:self.ball];
+}
+
+
 - (void)startGame
 {
     self.ball.hidden = NO;   //reset ball position for new game
     self.ball.physicsBody = [SKPhysicsBody bodyWithTexture:self.ball.texture size:self.ball.texture.size];
-    CGPoint ballPoint = CGPointMake(170,600);
+    CGPoint ballPoint = CGPointMake(170,400);
     self.ball.position = ballPoint; 
     self.ball.physicsBody.dynamic = YES; //Not sitting still
     self.ball.physicsBody.affectedByGravity = NO; //Not affected

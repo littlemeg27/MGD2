@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MGDProject3/GameScene.m"
-            timestampString = "459229347.508021"
+            timestampString = "459389071.553322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-addBall:"
             landmarkType = "5">
          </BreakpointContent>
