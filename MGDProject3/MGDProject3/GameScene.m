@@ -11,16 +11,6 @@
 @interface GameScene ()
 
 @property (nonatomic) SKSpriteNode *ball;
-@property (nonatomic) SKSpriteNode *topWall;
-@property (nonatomic) SKSpriteNode *topLeft;
-@property (nonatomic) SKSpriteNode *bottomLeft;
-@property (nonatomic) SKSpriteNode *middleLeft;
-@property (nonatomic) SKSpriteNode *bottomRight;
-@property (nonatomic) SKSpriteNode *bottomMiddle2;
-@property (nonatomic) SKSpriteNode *bottomMiddle1;
-@property (nonatomic) SKSpriteNode *leftMiddle;
-@property (nonatomic) SKSpriteNode *topRight;
-@property (nonatomic) SKSpriteNode *topMiddle;
 
 @end
 
@@ -58,49 +48,61 @@
 
 -(void) addWalls:(CGSize) size
 {
-    self.topWall = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(765, 8)];
-    [self.topWall setPosition:CGPointMake(384, 950)];
-    [self addChild:self.topWall];
+    SKSpriteNode *topWall = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(765, 8)];
+    [topWall setPosition:CGPointMake(384, 950)];
+    [self addChild:topWall];
     
-    self.middleLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(435, 8)];
-    [self.middleLeft setPosition:CGPointMake(50, 470)]; //Horizontal middle left line
-    [self addChild:self.middleLeft];
+    SKSpriteNode *middleLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(435, 8)];
+    [middleLeft setPosition:CGPointMake(55, 470)]; //Horizontal middle left line
+    [self addChild:middleLeft];
     
-    self.bottomLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 350)];
-    [self.bottomLeft setPosition:CGPointMake(140, 150)]; //Vertical bottom left line
-    [self addChild:self.bottomLeft];
+    SKSpriteNode *bottomLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 350)];
+    [bottomLeft setPosition:CGPointMake(140, 175)]; //Vertical bottom left line
+    [self addChild:bottomLeft];
     
-    self.topLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 350)];
-    [self.topLeft setPosition:CGPointMake(140, 775)]; //Vertical top left line
-    [self addChild:self.topLeft];
+    SKSpriteNode *topLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 350)];
+    [topLeft setPosition:CGPointMake(140, 775)]; //Vertical top left line
+    [self addChild:topLeft];
     
-    self.bottomRight = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 700)];
-    [self.bottomRight setPosition:CGPointMake(630, 150)]; //Vertical bottom right line
-    [self addChild:self.bottomRight];
+    SKSpriteNode *bottomRight = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 700)];
+    [bottomRight setPosition:CGPointMake(630, 150)]; //Vertical bottom right line
+    [self addChild:bottomRight];
     
-    self.bottomMiddle2 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(300, 8)];
-    [self.bottomMiddle2 setPosition:CGPointMake(290, 230)]; //Horizontal middle bottom 2 line
-    [self addChild:self.bottomMiddle2];
+    SKSpriteNode *bottomMiddle2 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(330, 8)];
+    [bottomMiddle2 setPosition:CGPointMake(305, 230)]; //Horizontal middle bottom 2 line
+    [self addChild:bottomMiddle2];
     
-    self.bottomMiddle1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(300, 8)];
-    [self.bottomMiddle1 setPosition:CGPointMake(480, 110)]; //Horizontal middle bottom 1 line
-    [self addChild:self.bottomMiddle1];
+    SKSpriteNode *bottomMiddle1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(330, 8)];
+    [bottomMiddle1 setPosition:CGPointMake(465, 110)]; //Horizontal middle bottom 1 line
+    [self addChild:bottomMiddle1];
     
-    self.leftMiddle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 500)];
-    [self.leftMiddle setPosition:CGPointMake(270, 600)]; //Vertical middle left line
-    [self addChild:self.leftMiddle];
+    SKSpriteNode *leftMiddle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 500)];
+    [leftMiddle setPosition:CGPointMake(270, 600)]; //Vertical middle left line
+    [self addChild:leftMiddle];
     
-    self.topRight = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(380, 8)];
-    [self.topRight setPosition:CGPointMake(462, 846)]; //Horizontal top middle line 1
-    [self addChild:self.topRight];
+    SKSpriteNode *topMiddle1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(380, 8)];
+    [topMiddle1 setPosition:CGPointMake(456, 847)]; //Horizontal top middle line
+    [self addChild:topMiddle1];
     
-    self.topMiddle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 250)];
-    [self.topMiddle setPosition:CGPointMake(385, 590)]; //Vertical top middle line 2
-    [self addChild:self.topMiddle];
+    SKSpriteNode *topMiddle2 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 250)];
+    [topMiddle2 setPosition:CGPointMake(385, 620)]; //Vertical top middle line
+    [self addChild:topMiddle2];
     
-    /*self.topLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 250)];
-    [self.topLeft setPosition:CGPointMake(650, 728)]; //Vertical top right line
-    [self addChild:self.topLeft];*/
+    SKSpriteNode *middleRight1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(250, 8)];
+    [middleRight1 setPosition:CGPointMake(506, 745)]; //Horizontal middle right line
+    [self addChild:middleRight1];
+    
+    SKSpriteNode *middleRight2 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(250, 8)];
+    [middleRight2 setPosition:CGPointMake(505, 496)]; //Horizontal middle lower right line
+    [self addChild:middleRight2];
+    
+    SKSpriteNode *rightMiddle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(250, 8)];
+    [rightMiddle setPosition:CGPointMake(645, 620)]; //Horizontal middle lower right line
+    [self addChild:rightMiddle];
+    
+    SKSpriteNode *bottomMiddle3 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(250, 8)];
+    [bottomMiddle3 setPosition:CGPointMake(391, 350)]; //Horizontal right middle line
+    [self addChild:bottomMiddle3];
     
 
 }
