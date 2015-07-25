@@ -16,8 +16,6 @@
 		BA5C53371B5DE4E5007273F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5C53361B5DE4E5007273F2 /* Images.xcassets */; };
 		BA5C533A1B5DE4E5007273F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5C53381B5DE4E5007273F2 /* LaunchScreen.xib */; };
 		BA5C53461B5DE4E5007273F2 /* MGDProject3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5C53451B5DE4E5007273F2 /* MGDProject3Tests.m */; };
-		BA5C53521B5F4A5D007273F2 /* MazeBall.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5C53511B5F4A5D007273F2 /* MazeBall.png */; };
-		BA5C53541B619C16007273F2 /* TopWall.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5C53531B619C16007273F2 /* TopWall.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +45,6 @@
 		BA5C533F1B5DE4E5007273F2 /* MGDProject3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGDProject3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5C53441B5DE4E5007273F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA5C53451B5DE4E5007273F2 /* MGDProject3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDProject3Tests.m; sourceTree = "<group>"; };
-		BA5C53511B5F4A5D007273F2 /* MazeBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MazeBall.png; path = ../MazeBall.png; sourceTree = "<group>"; };
-		BA5C53531B619C16007273F2 /* TopWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TopWall.png; path = ../TopWall.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +93,6 @@
 				BA5C532E1B5DE4E5007273F2 /* GameScene.sks */,
 				BA5C53301B5DE4E5007273F2 /* GameViewController.h */,
 				BA5C53311B5DE4E5007273F2 /* GameViewController.m */,
-				BA5C53511B5F4A5D007273F2 /* MazeBall.png */,
-				BA5C53531B619C16007273F2 /* TopWall.png */,
 				BA5C53331B5DE4E5007273F2 /* Main.storyboard */,
 				BA5C53361B5DE4E5007273F2 /* Images.xcassets */,
 				BA5C53381B5DE4E5007273F2 /* LaunchScreen.xib */,
@@ -216,8 +210,6 @@
 				BA5C533A1B5DE4E5007273F2 /* LaunchScreen.xib in Resources */,
 				BA5C53371B5DE4E5007273F2 /* Images.xcassets in Resources */,
 				BA5C532F1B5DE4E5007273F2 /* GameScene.sks in Resources */,
-				BA5C53541B619C16007273F2 /* TopWall.png in Resources */,
-				BA5C53521B5F4A5D007273F2 /* MazeBall.png in Resources */,
 				BA5C53351B5DE4E5007273F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
