@@ -11,6 +11,13 @@
 @interface GameScene ()
 
 @property (nonatomic) SKShapeNode *ball;
+@property (nonatomic) SKShapeNode *hole1;
+@property (nonatomic) SKShapeNode *hole2;
+@property (nonatomic) SKShapeNode *hole3;
+@property (nonatomic) SKShapeNode *hole4;
+@property (nonatomic) SKShapeNode *hole5;
+@property (nonatomic) SKShapeNode *hole6;
+@property (nonatomic) SKShapeNode *hole7;
 
 @end
 
@@ -141,8 +148,55 @@
 
 -(void) addHoles:(CGSize) size
 {
-    //self.ball = [SKSpriteNode spriteNodeWithImageNamed:@"MazeBall.png"];
-    //[self addChild:self.ball];
+    float radius = 32;
+    self.hole1 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint1 = CGPointMake(35,510);
+    self.hole1.position = ballPoint1;
+    self.hole1.fillColor = [SKColor grayColor];
+    self.hole1.strokeColor = [SKColor grayColor]; //Hole 1
+    [self addChild:self.hole1];
+    
+    self.hole2 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint2 = CGPointMake(230,510);
+    self.hole2.position = ballPoint2;
+    self.hole2.fillColor = [SKColor grayColor];
+    self.hole2.strokeColor = [SKColor grayColor]; //Hole 2
+    [self addChild:self.hole2];
+    
+    self.hole3 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint3 = CGPointMake(180,910);
+    self.hole3.position = ballPoint3;
+    self.hole3.fillColor = [SKColor grayColor];
+    self.hole3.strokeColor = [SKColor grayColor]; //Hole 3
+    [self addChild:self.hole3];
+    
+    self.hole4 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint4 = CGPointMake(75,875);
+    self.hole4.position = ballPoint4;
+    self.hole4.fillColor = [SKColor grayColor];
+    self.hole4.strokeColor = [SKColor grayColor]; //Hole 4
+    [self addChild:self.hole4];
+    
+    self.hole5 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint5 = CGPointMake(75,875);
+    self.hole5.position = ballPoint5;
+    self.hole5.fillColor = [SKColor grayColor];
+    self.hole5.strokeColor = [SKColor grayColor]; //Hole 5
+    [self addChild:self.hole5];
+    
+    self.hole6 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint6 = CGPointMake(75,875);
+    self.hole6.position = ballPoint6;
+    self.hole6.fillColor = [SKColor grayColor];
+    self.hole6.strokeColor = [SKColor grayColor]; //Hole 6
+    [self addChild:self.hole6];
+    
+    self.hole7 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint7 = CGPointMake(75,875);
+    self.hole7.position = ballPoint7;
+    self.hole7.fillColor = [SKColor grayColor];
+    self.hole7.strokeColor = [SKColor grayColor]; //Hole 7
+    [self addChild:self.hole7];
 }
 
 
