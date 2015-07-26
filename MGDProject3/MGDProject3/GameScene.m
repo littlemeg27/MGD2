@@ -19,9 +19,12 @@
 @property (nonatomic) SKShapeNode *hole6;
 @property (nonatomic) SKShapeNode *hole7;
 @property (nonatomic) SKShapeNode *hole8;
+@property (nonatomic) SKLabelNode *pause;
 @property (nonatomic) SKLabelNode *countDown;
 @property (nonatomic) BOOL startGamePlay;
 @property (nonatomic) NSTimeInterval startTime;
+@property UIButton *button;
+@property (readwrite) BOOL gameIsPaused;
 
 @end
 
@@ -62,12 +65,17 @@ static const uint32_t ballCategory = 4;
         
         self.countDown = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         self.countDown.fontSize = 25;
-        self.countDown.position = CGPointMake(130,975);
-        self.countDown.fontColor = [SKColor whiteColor ];
-        self.countDown.name = @"countDown";
-        self.countDown.zPosition = 100;
+        self.countDown.position = CGPointMake(120,975);
+        self.countDown.fontColor = [SKColor whiteColor];
+        
+        self.pause = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.pause.text = @"Pause";
+        self.pause.fontSize = 25;
+        self.pause.position = CGPointMake(650,975);
+        self.pause.fontColor = [SKColor whiteColor];
         
         [self addChild:self.countDown];
+        [self addChild:self.pause];
         [self addChild:startLabel];
         [self addChild:endLabel];
         [self addBall:size];
@@ -296,6 +304,8 @@ static const uint32_t ballCategory = 4;
     self.ball.physicsBody.categoryBitMask = ballCategory;
     self.ball.physicsBody.contactTestBitMask = edgeCategory | wallCategory | holeCategory;
     
+    self.startGamePlay = YES; //Starts timer at 0 when the game starts
+    
     //setup to handle accelerometer readings using CoreMotion Framework
     [self startAccelerationOn]; //Yeah not sure
 }
@@ -364,10 +374,7 @@ static const uint32_t ballCategory = 4;
     for (UITouch *touch in touches)
     {
         CGPoint location = [touch locationInNode:self];
-        if (CGRectContainsPoint(self.countDown.frame, location))
-        {
-            self.startGamePlay = YES;
-        }
+        self.scene.view.paused = YES;
     }
 }
 
