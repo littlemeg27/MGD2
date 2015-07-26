@@ -19,7 +19,9 @@
 @property (nonatomic) SKShapeNode *hole6;
 @property (nonatomic) SKShapeNode *hole7;
 @property (nonatomic) SKShapeNode *hole8;
-@property (nonatomic) SKLabelNode *countLabel;
+@property (nonatomic) SKLabelNode *countDown;
+@property (nonatomic) BOOL startGamePlay;
+@property (nonatomic) NSTimeInterval startTime;
 
 //@property (SK_NONATOMIC_IOSONLY, getter = isPaused) BOOL paused;
 
@@ -39,10 +41,7 @@ static const uint32_t ballCategory = 4;
 
 
 -(id)initWithSize:(CGSize)size
-{
-    //int count;
-    //BOOL updateLabel;
-    
+{    
     if (self = [super initWithSize:size])
     {
         /* Setup your scene here */
@@ -63,19 +62,17 @@ static const uint32_t ballCategory = 4;
         endLabel.fontSize = 20;
         endLabel.position = CGPointMake(70, 50);
         
-        /*count = 0;
-        updateLabel = false;
-        self.countLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        self.countLabel.name = @"Counter Label";
-        self.countLabel.text = @"0";
-        self.countLabel.fontSize = 20;
-        self.countLabel.fontColor = [SKColor whiteColor];
-        self.countLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-        self.countLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
-        self.countLabel.position = CGPointMake(50,980);
-        self.countLabel.zPosition = 900;*/
+        self.countDown = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.countDown.fontSize = 70;
+        self.countDown.position = CGPointMake(CGRectGetMidX(self.frame),
+                                         CGRectGetMaxY(self.frame)*0.85);
+        //self.countDown.verticalAlignment = SKVerticalAlignmentCenter;
+        self.countDown.fontColor = [SKColor whiteColor ];
+        self.countDown.name = @"countDown";
+        self.countDown.zPosition = 100;
+        [self addChild:self.countDown];
         
-        [self addChild:self.countLabel];
+        [self addChild:self.countDown];
         [self addChild:startLabel];
         [self addChild:endLabel];
         [self addBall:size];
@@ -366,34 +363,33 @@ static const uint32_t ballCategory = 4;
     
 }
 
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-/*{
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    /* Called when a touch begins */
     for (UITouch *touch in touches)
     {
-        SKSpriteNode *pause = (SKSpriteNode*)[self childNodeWithName:@"pause"];
         CGPoint location = [touch locationInNode:self];
-        // NSLog(@"** TOUCH LOCATION ** \nx: %f / y: %f", location.x, location.y);
-        
-        if([pause containsPoint:location])
+        if (CGRectContainsPoint(self.countDown.frame, location))
         {
-            NSLog(@"PAUSE GAME HERE SOMEHOW");
-            self.scene.view.paused = YES;
+            self.startGamePlay = YES;
         }
     }
-}*/
+}
 
-//-(void)update:(NSTimeInterval)currentTime
-//{
+-(void)update:(NSTimeInterval)currentTime
+{
     /* Called before each frame is rendered */
     
     //Update the ball position
-    /*[self updateBallPosition];
+    [self updateBallPosition];
     
-    id wait = [SKAction waitForDuration:2.5];
-    id run = [SKAction runBlock:^{
-        // your code here ...
-    }];
-   [self.countLabel runAction:[SKAction sequence:@[wait, run]]];
-}*/
+    //reset counter if starting
+    if (self.startGamePlay)
+    {
+        self.startTime = currentTime;
+        self.startGamePlay = NO;
+    }
+    self.countDown.text = [NSString stringWithFormat:@"%i", (int)(currentTime-self.startTime)];
+}
 
 @end
