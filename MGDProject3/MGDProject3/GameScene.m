@@ -23,8 +23,6 @@
 @property (nonatomic) BOOL startGamePlay;
 @property (nonatomic) NSTimeInterval startTime;
 
-//@property (SK_NONATOMIC_IOSONLY, getter = isPaused) BOOL paused;
-
 @end
 
 static const uint32_t holeCategory = 0;
@@ -63,14 +61,11 @@ static const uint32_t ballCategory = 4;
         endLabel.position = CGPointMake(70, 50);
         
         self.countDown = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        self.countDown.fontSize = 70;
-        self.countDown.position = CGPointMake(CGRectGetMidX(self.frame),
-                                         CGRectGetMaxY(self.frame)*0.85);
-        //self.countDown.verticalAlignment = SKVerticalAlignmentCenter;
+        self.countDown.fontSize = 25;
+        self.countDown.position = CGPointMake(130,975);
         self.countDown.fontColor = [SKColor whiteColor ];
         self.countDown.name = @"countDown";
         self.countDown.zPosition = 100;
-        [self addChild:self.countDown];
         
         [self addChild:self.countDown];
         [self addChild:startLabel];
@@ -389,7 +384,7 @@ static const uint32_t ballCategory = 4;
         self.startTime = currentTime;
         self.startGamePlay = NO;
     }
-    self.countDown.text = [NSString stringWithFormat:@"%i", (int)(currentTime-self.startTime)];
+    self.countDown.text = [NSString stringWithFormat:@"Time: %i", (int)(currentTime-self.startTime)];
 }
 
 @end
