@@ -11,26 +11,21 @@
 @interface GameScene ()
 
 @property (nonatomic) SKShapeNode *ball;
-@property (nonatomic) SKShapeNode *hole1;
-@property (nonatomic) SKShapeNode *hole2;
-@property (nonatomic) SKShapeNode *hole3;
-@property (nonatomic) SKShapeNode *hole4;
-@property (nonatomic) SKShapeNode *hole5;
-@property (nonatomic) SKShapeNode *hole6;
-@property (nonatomic) SKShapeNode *hole7;
-@property (nonatomic) SKShapeNode *hole8;
 @property (nonatomic) SKShapeNode *pause;
 @property (nonatomic) SKLabelNode *countDown;
 @property (nonatomic) BOOL startGamePlay;
 @property (nonatomic) NSTimeInterval startTime;
 @property (readwrite) BOOL gameIsPaused;
+//@property (SKNode *) debugOverlay;
 
 @end
 
-static const uint32_t holeCategory = 0;
-static const uint32_t wallCategory = 1;
-static const uint32_t edgeCategory = 2;
-static const uint32_t ballCategory = 4;
+static const uint32_t holeCategory = 1;
+static const uint32_t wallCategory = 2;
+static const uint32_t edgeCategory = 4;
+static const uint32_t ballCategory = 8;
+static const uint32_t hole2Category = 16;
+static const uint32_t winCategory = 32;
 
 @import CoreMotion;
 
@@ -67,12 +62,22 @@ static const uint32_t ballCategory = 4;
         self.countDown.position = CGPointMake(120,975);
         self.countDown.fontColor = [SKColor whiteColor];
         
+        //self.anchorPoint = CGPointMake (0.5,0.5);
+        
+        SKNode *myWorld = [SKNode node];
+        [self addChild:myWorld];
+        
+        SKNode *camera = [SKNode node];
+        camera.name = @"camera";
+        [myWorld addChild:camera];
+        
         [self addChild:self.countDown];
         [self addChild:startLabel];
         [self addChild:endLabel];
         [self addBall:size];
         [self addWalls:size];
         [self addHoles:size];
+        [self addNodes:size];
         [self startGame];
     }
     return self;
@@ -86,8 +91,8 @@ static const uint32_t ballCategory = 4;
     self.ball.position = ballPoint;
     self.ball.fillColor = [SKColor redColor];
     self.ball.strokeColor = [SKColor blackColor];
-    self.ball.physicsBody.categoryBitMask = holeCategory;
-    self.ball.physicsBody.contactTestBitMask = wallCategory | holeCategory;
+    self.ball.physicsBody.categoryBitMask = ballCategory;
+    self.ball.physicsBody.contactTestBitMask = wallCategory | holeCategory | hole2Category | winCategory;
     [self addChild:self.ball];
 }
 
@@ -210,82 +215,145 @@ static const uint32_t ballCategory = 4;
 -(void) addHoles:(CGSize) size
 {
     float radius = 32;
-    self.hole1 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    SKShapeNode *hole1 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint1 = CGPointMake(35,510);
-    self.hole1.position = ballPoint1;
-    self.hole1.fillColor = [SKColor grayColor]; //Right after start left corner
-    self.hole1.strokeColor = [SKColor blackColor]; //Hole 1
-    self.hole1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.hole1.frame.size.width/2];
-    self.hole1.physicsBody.dynamic =  NO;
-    self.hole1.physicsBody.categoryBitMask = holeCategory;
-    self.hole1.physicsBody.collisionBitMask = 0;
-    self.hole1.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:self.hole1];
+    hole1.position = ballPoint1;
+    hole1.fillColor = [SKColor grayColor]; //Right after start left corner
+    hole1.strokeColor = [SKColor blackColor]; //Hole 1
+    hole1.physicsBody.categoryBitMask = holeCategory;
+    hole1.physicsBody.collisionBitMask = 0;
+    hole1.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+    [self addChild:hole1];
     
-    self.hole2 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    SKShapeNode *hole2 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint2 = CGPointMake(230,510);
-    self.hole2.position = ballPoint2;
-    self.hole2.fillColor = [SKColor grayColor]; //Right after start right corner
-    self.hole2.strokeColor = [SKColor blackColor]; //Hole 2
-    self.hole2.physicsBody.categoryBitMask = holeCategory;
-    self.hole2.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:self.hole2];
+    hole2.position = ballPoint2;
+    hole2.fillColor = [SKColor grayColor]; //Right after start right corner
+    hole2.strokeColor = [SKColor blackColor]; //Hole 2
+    hole2.physicsBody.categoryBitMask = holeCategory;
+    hole2.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+    [self addChild:hole2];
     
-    self.hole3 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    SKShapeNode *hole3 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint3 = CGPointMake(180,910);
-    self.hole3.position = ballPoint3;
-    self.hole3.fillColor = [SKColor grayColor]; //Upper left corner third turn
-    self.hole3.strokeColor = [SKColor blackColor]; //Hole 3
-    self.hole3.physicsBody.categoryBitMask = holeCategory;
-    self.hole3.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:self.hole3];
+    hole3.position = ballPoint3;
+    hole3.fillColor = [SKColor grayColor]; //Upper left corner third turn
+    hole3.strokeColor = [SKColor blackColor]; //Hole 3
+    hole3.physicsBody.categoryBitMask = holeCategory;
+    hole3.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+    [self addChild:hole3];
     
-    self.hole4 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    SKShapeNode *hole4 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint4 = CGPointMake(730,910);
-    self.hole4.position = ballPoint4;
-    self.hole4.fillColor = [SKColor grayColor]; //Upper right corner
-    self.hole4.strokeColor = [SKColor blackColor]; //Hole 4
-    self.hole4.physicsBody.categoryBitMask = holeCategory;
-    self.hole4.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:self.hole4];
+    hole4.position = ballPoint4;
+    hole4.fillColor = [SKColor grayColor]; //Upper right corner
+    hole4.strokeColor = [SKColor blackColor]; //Hole 4
+    hole4.physicsBody.categoryBitMask = holeCategory;
+    hole4.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+    [self addChild:hole4];
     
-    self.hole5 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    SKShapeNode *hole5 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint5 = CGPointMake(310,390);
-    self.hole5.position = ballPoint5;
-    self.hole5.fillColor = [SKColor grayColor]; //Middle left corner
-    self.hole5.strokeColor = [SKColor blackColor]; //Hole 5
-    self.hole5.physicsBody.categoryBitMask = holeCategory;
-    self.hole5.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:self.hole5];
+    hole5.position = ballPoint5;
+    hole5.fillColor = [SKColor grayColor]; //Middle left corner
+    hole5.strokeColor = [SKColor blackColor]; //Hole 5
+    hole5.physicsBody.categoryBitMask = holeCategory;
+    hole5.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+    [self addChild:hole5];
     
-    self.hole6 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    SKShapeNode *hole6 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint6 = CGPointMake(590,455);
-    self.hole6.position = ballPoint6;
-    self.hole6.fillColor = [SKColor grayColor]; //Middle right corner
-    self.hole6.strokeColor = [SKColor blackColor]; //Hole 6
-    self.hole6.physicsBody.categoryBitMask = holeCategory;
-    self.hole6.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:self.hole6];
+    hole6.position = ballPoint6;
+    hole6.fillColor = [SKColor grayColor]; //Middle right corner
+    hole6.strokeColor = [SKColor blackColor]; //Hole 6
+    hole6.physicsBody.categoryBitMask = holeCategory;
+    hole6.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+    [self addChild:hole6];
     
-    self.hole7 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    SKShapeNode *hole7 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint7 = CGPointMake(590,150);
-    self.hole7.position = ballPoint7;
-    self.hole7.fillColor = [SKColor grayColor];
-    self.hole7.strokeColor = [SKColor blackColor]; //Hole 7
-    self.hole7.physicsBody.categoryBitMask = holeCategory;
-    self.hole7.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:self.hole7];
+    hole7.position = ballPoint7;
+    hole7.fillColor = [SKColor grayColor];
+    hole7.strokeColor = [SKColor blackColor]; //Hole 7
+    hole7.physicsBody.categoryBitMask = holeCategory;
+    hole7.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+    [self addChild:hole7];
     
-    self.hole8 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    SKShapeNode *hole8 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint8 = CGPointMake(180,190);
-    self.hole8.position = ballPoint8;
-    self.hole8.fillColor = [SKColor grayColor];
-    self.hole8.strokeColor = [SKColor blackColor]; //Hole 8
-    self.hole8.physicsBody.categoryBitMask = holeCategory;
-    self.hole8.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:self.hole8];
+    hole8.position = ballPoint8;
+    hole8.fillColor = [SKColor grayColor];
+    hole8.strokeColor = [SKColor blackColor]; //Hole 8
+    hole8.physicsBody.categoryBitMask = holeCategory;
+    hole8.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+    [self addChild:hole8];
 }
 
+-(void) addNodes:(CGSize) size
+{
+    float radius = 28;
+    SKNode *hole1 = [SKNode node];
+    hole1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
+    CGPoint ballPoint1 = CGPointMake(35,510);
+    hole1.position = ballPoint1;
+    hole1.physicsBody.categoryBitMask = hole2Category;
+    [self addChild: hole1];
+    
+    SKNode *hole2 = [SKNode node];
+    CGPoint ballPoint2 = CGPointMake(230,510);
+    hole2.position = ballPoint2;
+    hole2.position = ballPoint1;
+    hole2.physicsBody.categoryBitMask = hole2Category;
+    [self addChild: hole2];
+    
+    SKNode *hole3 = [SKNode node];
+    CGPoint ballPoint3 = CGPointMake(180,910);
+    hole3.position = ballPoint3;
+    hole3.position = ballPoint1;
+    hole3.physicsBody.categoryBitMask = hole2Category;
+    [self addChild: hole3];
+    
+    SKNode *hole4 = [SKNode node];
+    hole4.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
+    CGPoint ballPoint4 = CGPointMake(730,910);
+    hole4.position = ballPoint4;
+    hole4.physicsBody.categoryBitMask = hole2Category;
+    [self addChild: hole4];
+    
+    SKNode *hole5 = [SKNode node];
+    hole5.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
+    CGPoint ballPoint5 = CGPointMake(310,390);
+    hole5.position = ballPoint5;
+    hole5.physicsBody.categoryBitMask = hole2Category;
+    [self addChild: hole5];
+    
+    SKNode *hole6 = [SKNode node];
+    hole6.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
+    CGPoint ballPoint6 = CGPointMake(590,455);
+    hole6.position = ballPoint6;
+    hole6.physicsBody.categoryBitMask = hole2Category;
+    [self addChild: hole6];
+    
+    SKNode *hole7 = [SKNode node];
+    hole7.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
+    CGPoint ballPoint7 = CGPointMake(590,150);
+    hole7.position = ballPoint7;
+    hole7.physicsBody.categoryBitMask = hole2Category;
+    [self addChild: hole7];
+    
+    SKNode *hole8 = [SKNode node];
+    hole8.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
+    CGPoint ballPoint8 = CGPointMake(180,190);
+    hole8.position = ballPoint8;
+    hole8.physicsBody.categoryBitMask = hole2Category;
+    [self addChild: hole8];
+    
+    SKNode *endBox = [SKNode node];
+    endBox.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0,100) toPoint:CGPointMake(140, 100)];
+    endBox.physicsBody.categoryBitMask = winCategory;
+    [self addChild: endBox];
+    
+}
 
 - (void)startGame
 {
@@ -297,7 +365,7 @@ static const uint32_t ballCategory = 4;
     self.ball.physicsBody.affectedByGravity = NO; //Not affected
     self.ball.physicsBody.mass = 0.05; //Give mass
     self.ball.physicsBody.categoryBitMask = ballCategory;
-    self.ball.physicsBody.contactTestBitMask = wallCategory | holeCategory;
+    self.ball.physicsBody.contactTestBitMask = wallCategory | hole2Category | winCategory;
     
     self.startGamePlay = YES; //Starts timer at 0 when the game starts
     
@@ -352,29 +420,41 @@ static const uint32_t ballCategory = 4;
     {
         SKAction *playSFX1 = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
         [self runAction:playSFX1];
-        NSLog(@"Ball has hit a hole"); //Makes sound when the ball hits the edge
+        NSLog(@"Ball has hit a hole"); //Makes sound when the ball hits the hole
     }
     
     if (notBall.categoryBitMask == wallCategory)
     {
         SKAction *playSFX1 = [SKAction playSoundFileNamed:@"shake.caf" waitForCompletion:NO];
         [self runAction:playSFX1];
-        NSLog(@"Ball has hit the wall or edge"); //Makes sound when the ball hits the bricks
+        NSLog(@"Ball has hit the wall or edge"); //Makes sound when the ball hits the wall
     }
     
-}
+    if (notBall.categoryBitMask == hole2Category)
+    {
+        SKAction *playSFX1 = [SKAction playSoundFileNamed:@"shake.caf" waitForCompletion:NO];
+        [self runAction:playSFX1];
+        NSLog(@"Ball has hit the hole"); //Makes sound when the ball hits the hole
+        
+        SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        label.text = @"Game Over!";
+        label.fontColor = [SKColor whiteColor];
+        label.fontSize = 50;
+        label.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+        [self addChild:label];
+    }
+    
+    if (notBall.categoryBitMask == winCategory)
+    {
+        SKLabelNode *label2 = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        label2.text = @"You Won!!";
+        label2.fontColor = [SKColor whiteColor];
+        label2.fontSize = 50;
+        label2.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+        [self addChild:label2];
+    }
 
-/*-(void)pauseGame
-{
-    self.gameIsPaused = YES;
-    self.paused = YES;
 }
-
--(void)unpauseGame
-{
-    self.gameIsPaused = NO;
-    self.paused = NO;
-}*/
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
