@@ -19,11 +19,10 @@
 @property (nonatomic) SKShapeNode *hole6;
 @property (nonatomic) SKShapeNode *hole7;
 @property (nonatomic) SKShapeNode *hole8;
-@property (nonatomic) SKLabelNode *pause;
+@property (nonatomic) SKShapeNode *pause;
 @property (nonatomic) SKLabelNode *countDown;
 @property (nonatomic) BOOL startGamePlay;
 @property (nonatomic) NSTimeInterval startTime;
-@property UIButton *button;
 @property (readwrite) BOOL gameIsPaused;
 
 @end
@@ -68,14 +67,7 @@ static const uint32_t ballCategory = 4;
         self.countDown.position = CGPointMake(120,975);
         self.countDown.fontColor = [SKColor whiteColor];
         
-        self.pause = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        self.pause.text = @"Pause";
-        self.pause.fontSize = 25;
-        self.pause.position = CGPointMake(650,975);
-        self.pause.fontColor = [SKColor whiteColor];
-        
         [self addChild:self.countDown];
-        [self addChild:self.pause];
         [self addChild:startLabel];
         [self addChild:endLabel];
         [self addBall:size];
@@ -94,8 +86,8 @@ static const uint32_t ballCategory = 4;
     self.ball.position = ballPoint;
     self.ball.fillColor = [SKColor redColor];
     self.ball.strokeColor = [SKColor blackColor];
-    self.ball.physicsBody.categoryBitMask = ballCategory;
-    self.ball.physicsBody.contactTestBitMask = edgeCategory | wallCategory | holeCategory;
+    self.ball.physicsBody.categoryBitMask = holeCategory;
+    self.ball.physicsBody.contactTestBitMask = wallCategory | holeCategory;
     [self addChild:self.ball];
 }
 
@@ -104,17 +96,17 @@ static const uint32_t ballCategory = 4;
     SKSpriteNode *topWall = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(765, 8)];
     [topWall setPosition:CGPointMake(384, 950)];
     topWall.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topWall.frame.size];
-    topWall.physicsBody.dynamic =  NO;
+    topWall.physicsBody.dynamic = NO;
     topWall.physicsBody.categoryBitMask = wallCategory;
-    topWall.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    topWall.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:topWall];
     
     SKSpriteNode *middleLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(435, 8)];
     [middleLeft setPosition:CGPointMake(55, 470)]; //Horizontal middle left line
     middleLeft.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:middleLeft.frame.size];
-    middleLeft.physicsBody.dynamic =  NO;
+    middleLeft.physicsBody.dynamic = NO;
     middleLeft.physicsBody.categoryBitMask = wallCategory;
-    middleLeft.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    middleLeft.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:middleLeft];
     
     SKSpriteNode *bottomLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 350)];
@@ -122,7 +114,7 @@ static const uint32_t ballCategory = 4;
     bottomLeft.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottomLeft.frame.size];
     bottomLeft.physicsBody.dynamic =  NO;
     bottomLeft.physicsBody.categoryBitMask = wallCategory;
-    bottomLeft.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    bottomLeft.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:bottomLeft];
     
     SKSpriteNode *topLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 350)];
@@ -130,7 +122,7 @@ static const uint32_t ballCategory = 4;
     topLeft.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topLeft.frame.size];
     topLeft.physicsBody.dynamic =  NO;
     topLeft.physicsBody.categoryBitMask = wallCategory;
-    topLeft.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    topLeft.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:topLeft];
     
     SKSpriteNode *bottomRight = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 700)];
@@ -138,7 +130,7 @@ static const uint32_t ballCategory = 4;
     bottomRight.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottomRight.frame.size];
     bottomRight.physicsBody.dynamic =  NO;
     bottomRight.physicsBody.categoryBitMask = wallCategory;
-    bottomRight.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    bottomRight.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:bottomRight];
     
     SKSpriteNode *bottomMiddle2 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(330, 8)];
@@ -146,7 +138,7 @@ static const uint32_t ballCategory = 4;
     bottomMiddle2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottomMiddle2.frame.size];
     bottomMiddle2.physicsBody.dynamic =  NO;
     bottomMiddle2.physicsBody.categoryBitMask = wallCategory;
-    bottomMiddle2.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    bottomMiddle2.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:bottomMiddle2];
     
     SKSpriteNode *bottomMiddle1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(330, 8)];
@@ -154,7 +146,7 @@ static const uint32_t ballCategory = 4;
     bottomMiddle1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottomMiddle1.frame.size];
     bottomMiddle1.physicsBody.dynamic =  NO;
     bottomMiddle1.physicsBody.categoryBitMask = wallCategory;
-    bottomMiddle1.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    bottomMiddle1.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:bottomMiddle1];
     
     SKSpriteNode *leftMiddle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 500)];
@@ -162,7 +154,7 @@ static const uint32_t ballCategory = 4;
     leftMiddle.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:leftMiddle.frame.size];
     leftMiddle.physicsBody.dynamic =  NO;
     leftMiddle.physicsBody.categoryBitMask = wallCategory;
-    leftMiddle.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    leftMiddle.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:leftMiddle];
     
     SKSpriteNode *topMiddle1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(380, 8)];
@@ -170,7 +162,7 @@ static const uint32_t ballCategory = 4;
     topMiddle1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topMiddle1.frame.size];
     topMiddle1.physicsBody.dynamic =  NO;
     topMiddle1.physicsBody.categoryBitMask = wallCategory;
-    topMiddle1.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    topMiddle1.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:topMiddle1];
     
     SKSpriteNode *topMiddle2 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 250)];
@@ -178,7 +170,7 @@ static const uint32_t ballCategory = 4;
     topMiddle2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topMiddle2.frame.size];
     topMiddle2.physicsBody.dynamic =  NO;
     topMiddle2.physicsBody.categoryBitMask = wallCategory;
-    topMiddle2.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    topMiddle2.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:topMiddle2];
     
     SKSpriteNode *middleRight1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(250, 8)];
@@ -186,7 +178,7 @@ static const uint32_t ballCategory = 4;
     middleRight1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:middleRight1.frame.size];
     middleRight1.physicsBody.dynamic =  NO;
     middleRight1.physicsBody.categoryBitMask = wallCategory;
-    middleRight1.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    middleRight1.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:middleRight1];
     
     SKSpriteNode *middleRight2 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(250, 8)];
@@ -194,7 +186,7 @@ static const uint32_t ballCategory = 4;
     middleRight2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:middleRight2.frame.size];
     middleRight2.physicsBody.dynamic =  NO;
     middleRight2.physicsBody.categoryBitMask = wallCategory;
-    middleRight2.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    middleRight2.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:middleRight2];
     
     SKSpriteNode *rightMiddle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(250, 8)];
@@ -202,7 +194,7 @@ static const uint32_t ballCategory = 4;
     rightMiddle.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rightMiddle.frame.size];
     rightMiddle.physicsBody.dynamic =  NO;
     rightMiddle.physicsBody.categoryBitMask = wallCategory;
-    rightMiddle.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    rightMiddle.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:rightMiddle];
     
     SKSpriteNode *bottomMiddle3 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(250, 8)];
@@ -210,7 +202,7 @@ static const uint32_t ballCategory = 4;
     bottomMiddle3.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottomMiddle3.frame.size];
     bottomMiddle3.physicsBody.dynamic =  NO;
     bottomMiddle3.physicsBody.categoryBitMask = wallCategory;
-    bottomMiddle3.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    bottomMiddle3.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:bottomMiddle3];
 }
 
@@ -223,8 +215,11 @@ static const uint32_t ballCategory = 4;
     self.hole1.position = ballPoint1;
     self.hole1.fillColor = [SKColor grayColor]; //Right after start left corner
     self.hole1.strokeColor = [SKColor blackColor]; //Hole 1
+    self.hole1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.hole1.frame.size.width/2];
+    self.hole1.physicsBody.dynamic =  NO;
     self.hole1.physicsBody.categoryBitMask = holeCategory;
-    self.hole1.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    self.hole1.physicsBody.collisionBitMask = 0;
+    self.hole1.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:self.hole1];
     
     self.hole2 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
@@ -233,7 +228,7 @@ static const uint32_t ballCategory = 4;
     self.hole2.fillColor = [SKColor grayColor]; //Right after start right corner
     self.hole2.strokeColor = [SKColor blackColor]; //Hole 2
     self.hole2.physicsBody.categoryBitMask = holeCategory;
-    self.hole2.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    self.hole2.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:self.hole2];
     
     self.hole3 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
@@ -242,7 +237,7 @@ static const uint32_t ballCategory = 4;
     self.hole3.fillColor = [SKColor grayColor]; //Upper left corner third turn
     self.hole3.strokeColor = [SKColor blackColor]; //Hole 3
     self.hole3.physicsBody.categoryBitMask = holeCategory;
-    self.hole3.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    self.hole3.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:self.hole3];
     
     self.hole4 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
@@ -251,7 +246,7 @@ static const uint32_t ballCategory = 4;
     self.hole4.fillColor = [SKColor grayColor]; //Upper right corner
     self.hole4.strokeColor = [SKColor blackColor]; //Hole 4
     self.hole4.physicsBody.categoryBitMask = holeCategory;
-    self.hole4.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    self.hole4.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:self.hole4];
     
     self.hole5 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
@@ -260,7 +255,7 @@ static const uint32_t ballCategory = 4;
     self.hole5.fillColor = [SKColor grayColor]; //Middle left corner
     self.hole5.strokeColor = [SKColor blackColor]; //Hole 5
     self.hole5.physicsBody.categoryBitMask = holeCategory;
-    self.hole5.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    self.hole5.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:self.hole5];
     
     self.hole6 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
@@ -269,7 +264,7 @@ static const uint32_t ballCategory = 4;
     self.hole6.fillColor = [SKColor grayColor]; //Middle right corner
     self.hole6.strokeColor = [SKColor blackColor]; //Hole 6
     self.hole6.physicsBody.categoryBitMask = holeCategory;
-    self.hole6.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    self.hole6.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:self.hole6];
     
     self.hole7 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
@@ -278,7 +273,7 @@ static const uint32_t ballCategory = 4;
     self.hole7.fillColor = [SKColor grayColor];
     self.hole7.strokeColor = [SKColor blackColor]; //Hole 7
     self.hole7.physicsBody.categoryBitMask = holeCategory;
-    self.hole7.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    self.hole7.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:self.hole7];
     
     self.hole8 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
@@ -287,7 +282,7 @@ static const uint32_t ballCategory = 4;
     self.hole8.fillColor = [SKColor grayColor];
     self.hole8.strokeColor = [SKColor blackColor]; //Hole 8
     self.hole8.physicsBody.categoryBitMask = holeCategory;
-    self.hole8.physicsBody.contactTestBitMask = edgeCategory | wallCategory | ballCategory;
+    self.hole8.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:self.hole8];
 }
 
@@ -302,7 +297,7 @@ static const uint32_t ballCategory = 4;
     self.ball.physicsBody.affectedByGravity = NO; //Not affected
     self.ball.physicsBody.mass = 0.05; //Give mass
     self.ball.physicsBody.categoryBitMask = ballCategory;
-    self.ball.physicsBody.contactTestBitMask = edgeCategory | wallCategory | holeCategory;
+    self.ball.physicsBody.contactTestBitMask = wallCategory | holeCategory;
     
     self.startGamePlay = YES; //Starts timer at 0 when the game starts
     
@@ -333,13 +328,14 @@ static const uint32_t ballCategory = 4;
     CMAccelerometerData* data = motion.accelerometerData;
     if (fabs(data.acceleration.x) > 0.2)
     {
-        NSLog(@"acceleration value = %f", data.acceleration.x);
+        //NSLog(@"acceleration value = %f", data.acceleration.x);
         [self.ball.physicsBody applyForce:CGVectorMake(50.0 * data.acceleration.x, 50.0 * data.acceleration.y)];
     }
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact
 {
+    NSLog(@"Test");
     //Makes sound when the ball hits the wall or hits a hole
     SKPhysicsBody *notBall;
     
@@ -368,17 +364,38 @@ static const uint32_t ballCategory = 4;
     
 }
 
+/*-(void)pauseGame
+{
+    self.gameIsPaused = YES;
+    self.paused = YES;
+}
+
+-(void)unpauseGame
+{
+    self.gameIsPaused = NO;
+    self.paused = NO;
+}*/
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch begins */
-    for (UITouch *touch in touches)
+    /*for (UITouch *touch in touches)
     {
-        CGPoint location = [touch locationInNode:self];
-        self.scene.view.paused = YES;
-    }
+        self.pause.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.pause.frame.size];
+        self.pause.physicsBody.dynamic =  NO;
+        CGPoint pausePoint = CGPointMake(300,250);
+        self.pause.position = pausePoint;
+    
+        if([self.gameIsPaused containsPoint:pausePoint])
+        {
+            CGPoint pausePoint = [touch locationInNode:self];
+            self.scene.view.paused = YES;
+        }
+    }*/
+
 }
 
--(void)update:(NSTimeInterval)currentTime
+-(void)update:(CFTimeInterval)currentTime
 {
     /* Called before each frame is rendered */
     
