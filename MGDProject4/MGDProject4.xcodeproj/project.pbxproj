@@ -20,6 +20,7 @@
 		BA195E431B68606D00712945 /* explosion_small.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA195E411B68606D00712945 /* explosion_small.caf */; };
 		BA195E441B68606D00712945 /* shake.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA195E421B68606D00712945 /* shake.caf */; };
 		BA195E471B6873FF00712945 /* GameWinScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E461B6873FF00712945 /* GameWinScene.m */; };
+		BA195E4A1B687DDE00712945 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E491B687DDE00712945 /* MainMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		BA195E421B68606D00712945 /* shake.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = shake.caf; path = ../shake.caf; sourceTree = "<group>"; };
 		BA195E451B6873FF00712945 /* GameWinScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWinScene.h; sourceTree = "<group>"; };
 		BA195E461B6873FF00712945 /* GameWinScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWinScene.m; sourceTree = "<group>"; };
+		BA195E481B687DDE00712945 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../MainMenu.h; sourceTree = "<group>"; };
+		BA195E491B687DDE00712945 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenu.m; path = ../MainMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				BA195E461B6873FF00712945 /* GameWinScene.m */,
 				BA195E3E1B684FA100712945 /* GameOverScene.h */,
 				BA195E3F1B684FA100712945 /* GameOverScene.m */,
+				BA195E481B687DDE00712945 /* MainMenu.h */,
+				BA195E491B687DDE00712945 /* MainMenu.m */,
 				BA195E1D1B66F41500712945 /* GameScene.sks */,
 				BA195E1F1B66F41500712945 /* GameViewController.h */,
 				BA195E201B66F41500712945 /* GameViewController.m */,
@@ -246,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA195E4A1B687DDE00712945 /* MainMenu.m in Sources */,
 				BA195E211B66F41500712945 /* GameViewController.m in Sources */,
 				BA195E191B66F41500712945 /* AppDelegate.m in Sources */,
 				BA195E1C1B66F41500712945 /* GameScene.m in Sources */,

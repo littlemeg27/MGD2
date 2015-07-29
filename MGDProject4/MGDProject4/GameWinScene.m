@@ -15,7 +15,7 @@
 {
     if(self = [super initWithSize:size])
     {
-        self.backgroundColor = [SKColor blackColor];
+        self.backgroundColor = [SKColor brownColor];
         
         SKLabelNode *winLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         winLabel.text = @"You Won!!";

@@ -15,7 +15,7 @@
 {
     if(self = [super initWithSize:size])
     {
-        self.backgroundColor = [SKColor blackColor];
+        self.backgroundColor = [SKColor brownColor];
         
         SKLabelNode *loseLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         loseLabel.text = @"Game Over!";
