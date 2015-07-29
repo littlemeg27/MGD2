@@ -7,6 +7,7 @@
 //
 
 #import "GameScene.h"
+#import "GameOverScene.h"
 
 @interface GameScene ()
 
@@ -16,7 +17,6 @@
 @property (nonatomic) BOOL startGamePlay;
 @property (nonatomic) NSTimeInterval startTime;
 @property (readwrite) BOOL gameIsPaused;
-//@property (SKNode *) debugOverlay;
 
 @end
 
@@ -64,12 +64,12 @@ CMMotionManager *motion; //Gets in the four types of motion
         
         //self.anchorPoint = CGPointMake (0.5,0.5);
         
-        SKNode *myWorld = [SKNode node];
+        /*SKNode *myWorld = [SKNode node];
         [self addChild:myWorld];
         
         SKNode *camera = [SKNode node];
         camera.name = @"camera";
-        [myWorld addChild:camera];
+        [myWorld addChild:camera];*/
         
         [self addChild:self.countDown];
         [self addChild:startLabel];
@@ -436,12 +436,8 @@ CMMotionManager *motion; //Gets in the four types of motion
         [self runAction:playSFX1];
         NSLog(@"Ball has hit the hole"); //Makes sound when the ball hits the hole
         
-        SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        label.text = @"Game Over!";
-        label.fontColor = [SKColor whiteColor];
-        label.fontSize = 50;
-        label.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
-        [self addChild:label];
+        GameOverScene *gameOver = [GameOverScene sceneWithSize:self.size];
+        [self.view presentScene:gameOver];
     }
     
     if (notBall.categoryBitMask == winCategory)

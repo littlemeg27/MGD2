@@ -16,6 +16,7 @@
 		BA195E261B66F41600712945 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA195E251B66F41600712945 /* Images.xcassets */; };
 		BA195E291B66F41600712945 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA195E271B66F41600712945 /* LaunchScreen.xib */; };
 		BA195E351B66F41600712945 /* MGDProject4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E341B66F41600712945 /* MGDProject4Tests.m */; };
+		BA195E401B684FA100712945 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E3F1B684FA100712945 /* GameOverScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		BA195E2E1B66F41600712945 /* MGDProject4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGDProject4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA195E331B66F41600712945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA195E341B66F41600712945 /* MGDProject4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDProject4Tests.m; sourceTree = "<group>"; };
+		BA195E3E1B684FA100712945 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		BA195E3F1B684FA100712945 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				BA195E181B66F41500712945 /* AppDelegate.m */,
 				BA195E1A1B66F41500712945 /* GameScene.h */,
 				BA195E1B1B66F41500712945 /* GameScene.m */,
+				BA195E3E1B684FA100712945 /* GameOverScene.h */,
+				BA195E3F1B684FA100712945 /* GameOverScene.m */,
 				BA195E1D1B66F41500712945 /* GameScene.sks */,
 				BA195E1F1B66F41500712945 /* GameViewController.h */,
 				BA195E201B66F41500712945 /* GameViewController.m */,
@@ -232,6 +237,7 @@
 				BA195E191B66F41500712945 /* AppDelegate.m in Sources */,
 				BA195E1C1B66F41500712945 /* GameScene.m in Sources */,
 				BA195E161B66F41500712945 /* main.m in Sources */,
+				BA195E401B684FA100712945 /* GameOverScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +366,7 @@
 				INFOPLIST_FILE = MGDProject4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -370,6 +377,7 @@
 				INFOPLIST_FILE = MGDProject4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
