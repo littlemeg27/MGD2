@@ -1,15 +1,15 @@
 //
-//  GameOverScene.m
+//  GameWinScene.m
 //  MGDProject4
 //
 //  Created by Brenna Pavlinchak on 7/28/15.
 //  Copyright (c) 2015 Brenna Pavlinchak. All rights reserved.
 //
 
-#import "GameOverScene.h"
+#import "GameWinScene.h"
 #import "GameScene.h"
 
-@implementation GameOverScene
+@implementation GameWinScene
 
 -(instancetype)initWithSize:(CGSize)size
 {
@@ -17,13 +17,12 @@
     {
         self.backgroundColor = [SKColor blackColor];
         
-        SKLabelNode *loseLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        loseLabel.text = @"Game Over!";
-        loseLabel.fontColor = [SKColor whiteColor];
-        loseLabel.fontSize = 50;
-        loseLabel.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
-        [self addChild:loseLabel];
-        
+        SKLabelNode *winLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        winLabel.text = @"You Won!!";
+        winLabel.fontColor = [SKColor whiteColor];
+        winLabel.fontSize = 50;
+        winLabel.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+        [self addChild:winLabel];
         
         SKLabelNode *tryAgainLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         tryAgainLabel.text = @"Try Again!";
@@ -31,7 +30,6 @@
         tryAgainLabel.fontSize = 35;
         tryAgainLabel.position = CGPointMake(size.width/2, size.height/2 - 90);
         [self addChild:tryAgainLabel];
-        
     }
     return self;
 }

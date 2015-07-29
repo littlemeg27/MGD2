@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "GameOverScene.h"
+#import "GameWinScene.h"
 
 @interface GameScene ()
 
@@ -416,13 +417,6 @@ CMMotionManager *motion; //Gets in the four types of motion
         notBall = contact.bodyA;
     }
     
-    if (notBall.categoryBitMask == holeCategory)
-    {
-        SKAction *playSFX1 = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
-        [self runAction:playSFX1];
-        NSLog(@"Ball has hit a hole"); //Makes sound when the ball hits the hole
-    }
-    
     if (notBall.categoryBitMask == wallCategory)
     {
         SKAction *playSFX1 = [SKAction playSoundFileNamed:@"shake.caf" waitForCompletion:NO];
@@ -432,22 +426,18 @@ CMMotionManager *motion; //Gets in the four types of motion
     
     if (notBall.categoryBitMask == hole2Category)
     {
-        SKAction *playSFX1 = [SKAction playSoundFileNamed:@"shake.caf" waitForCompletion:NO];
+        SKAction *playSFX1 = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
         [self runAction:playSFX1];
         NSLog(@"Ball has hit the hole"); //Makes sound when the ball hits the hole
         
         GameOverScene *gameOver = [GameOverScene sceneWithSize:self.size];
-        [self.view presentScene:gameOver];
+        [self.view presentScene:gameOver transition:[SKTransition fadeWithDuration:2.0]]; //What happens when you lose
     }
     
     if (notBall.categoryBitMask == winCategory)
     {
-        SKLabelNode *label2 = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        label2.text = @"You Won!!";
-        label2.fontColor = [SKColor whiteColor];
-        label2.fontSize = 50;
-        label2.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
-        [self addChild:label2];
+        GameWinScene *gameWin = [GameWinScene sceneWithSize:self.size];
+        [self.view presentScene:gameWin transition:[SKTransition fadeWithDuration:2.0]]; //What happens when you win
     }
     
 }

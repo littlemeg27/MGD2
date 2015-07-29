@@ -17,6 +17,9 @@
 		BA195E291B66F41600712945 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA195E271B66F41600712945 /* LaunchScreen.xib */; };
 		BA195E351B66F41600712945 /* MGDProject4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E341B66F41600712945 /* MGDProject4Tests.m */; };
 		BA195E401B684FA100712945 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E3F1B684FA100712945 /* GameOverScene.m */; };
+		BA195E431B68606D00712945 /* explosion_small.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA195E411B68606D00712945 /* explosion_small.caf */; };
+		BA195E441B68606D00712945 /* shake.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA195E421B68606D00712945 /* shake.caf */; };
+		BA195E471B6873FF00712945 /* GameWinScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E461B6873FF00712945 /* GameWinScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,10 @@
 		BA195E341B66F41600712945 /* MGDProject4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDProject4Tests.m; sourceTree = "<group>"; };
 		BA195E3E1B684FA100712945 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		BA195E3F1B684FA100712945 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		BA195E411B68606D00712945 /* explosion_small.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion_small.caf; path = ../explosion_small.caf; sourceTree = "<group>"; };
+		BA195E421B68606D00712945 /* shake.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = shake.caf; path = ../shake.caf; sourceTree = "<group>"; };
+		BA195E451B6873FF00712945 /* GameWinScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWinScene.h; sourceTree = "<group>"; };
+		BA195E461B6873FF00712945 /* GameWinScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWinScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +100,15 @@
 				BA195E181B66F41500712945 /* AppDelegate.m */,
 				BA195E1A1B66F41500712945 /* GameScene.h */,
 				BA195E1B1B66F41500712945 /* GameScene.m */,
+				BA195E451B6873FF00712945 /* GameWinScene.h */,
+				BA195E461B6873FF00712945 /* GameWinScene.m */,
 				BA195E3E1B684FA100712945 /* GameOverScene.h */,
 				BA195E3F1B684FA100712945 /* GameOverScene.m */,
 				BA195E1D1B66F41500712945 /* GameScene.sks */,
 				BA195E1F1B66F41500712945 /* GameViewController.h */,
 				BA195E201B66F41500712945 /* GameViewController.m */,
+				BA195E411B68606D00712945 /* explosion_small.caf */,
+				BA195E421B68606D00712945 /* shake.caf */,
 				BA195E221B66F41600712945 /* Main.storyboard */,
 				BA195E251B66F41600712945 /* Images.xcassets */,
 				BA195E271B66F41600712945 /* LaunchScreen.xib */,
@@ -213,7 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA195E291B66F41600712945 /* LaunchScreen.xib in Resources */,
+				BA195E441B68606D00712945 /* shake.caf in Resources */,
 				BA195E261B66F41600712945 /* Images.xcassets in Resources */,
+				BA195E431B68606D00712945 /* explosion_small.caf in Resources */,
 				BA195E1E1B66F41500712945 /* GameScene.sks in Resources */,
 				BA195E241B66F41600712945 /* Main.storyboard in Resources */,
 			);
@@ -236,6 +249,7 @@
 				BA195E211B66F41500712945 /* GameViewController.m in Sources */,
 				BA195E191B66F41500712945 /* AppDelegate.m in Sources */,
 				BA195E1C1B66F41500712945 /* GameScene.m in Sources */,
+				BA195E471B6873FF00712945 /* GameWinScene.m in Sources */,
 				BA195E161B66F41500712945 /* main.m in Sources */,
 				BA195E401B684FA100712945 /* GameOverScene.m in Sources */,
 			);
