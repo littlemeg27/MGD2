@@ -21,6 +21,10 @@
 		BA195E441B68606D00712945 /* shake.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA195E421B68606D00712945 /* shake.caf */; };
 		BA195E471B6873FF00712945 /* GameWinScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E461B6873FF00712945 /* GameWinScene.m */; };
 		BA195E4A1B687DDE00712945 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E491B687DDE00712945 /* MainMenu.m */; };
+		BA195E4D1B6AE08D00712945 /* Credits.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E4C1B6AE08D00712945 /* Credits.m */; };
+		BA195E501B6AE0C200712945 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = BA195E4F1B6AE0C200712945 /* Tutorial.m */; };
+		BA195E541B6B16B400712945 /* o-HEDGE-MAZE-900.png in Resources */ = {isa = PBXBuildFile; fileRef = BA195E531B6B16B400712945 /* o-HEDGE-MAZE-900.png */; };
+		BA195E581B6B180400712945 /* 3_gaengig_3_achsig_quadrat.png in Resources */ = {isa = PBXBuildFile; fileRef = BA195E571B6B180400712945 /* 3_gaengig_3_achsig_quadrat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,12 @@
 		BA195E461B6873FF00712945 /* GameWinScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWinScene.m; sourceTree = "<group>"; };
 		BA195E481B687DDE00712945 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../MainMenu.h; sourceTree = "<group>"; };
 		BA195E491B687DDE00712945 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenu.m; path = ../MainMenu.m; sourceTree = "<group>"; };
+		BA195E4B1B6AE08D00712945 /* Credits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credits.h; sourceTree = "<group>"; };
+		BA195E4C1B6AE08D00712945 /* Credits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credits.m; sourceTree = "<group>"; };
+		BA195E4E1B6AE0C200712945 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
+		BA195E4F1B6AE0C200712945 /* Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial.m; sourceTree = "<group>"; };
+		BA195E531B6B16B400712945 /* o-HEDGE-MAZE-900.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "o-HEDGE-MAZE-900.png"; path = "../o-HEDGE-MAZE-900.png"; sourceTree = "<group>"; };
+		BA195E571B6B180400712945 /* 3_gaengig_3_achsig_quadrat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3_gaengig_3_achsig_quadrat.png; path = ../3_gaengig_3_achsig_quadrat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +119,15 @@
 				BA195E3F1B684FA100712945 /* GameOverScene.m */,
 				BA195E481B687DDE00712945 /* MainMenu.h */,
 				BA195E491B687DDE00712945 /* MainMenu.m */,
+				BA195E4B1B6AE08D00712945 /* Credits.h */,
+				BA195E4C1B6AE08D00712945 /* Credits.m */,
+				BA195E4E1B6AE0C200712945 /* Tutorial.h */,
+				BA195E4F1B6AE0C200712945 /* Tutorial.m */,
 				BA195E1D1B66F41500712945 /* GameScene.sks */,
 				BA195E1F1B66F41500712945 /* GameViewController.h */,
 				BA195E201B66F41500712945 /* GameViewController.m */,
+				BA195E531B6B16B400712945 /* o-HEDGE-MAZE-900.png */,
+				BA195E571B6B180400712945 /* 3_gaengig_3_achsig_quadrat.png */,
 				BA195E411B68606D00712945 /* explosion_small.caf */,
 				BA195E421B68606D00712945 /* shake.caf */,
 				BA195E221B66F41600712945 /* Main.storyboard */,
@@ -233,6 +249,8 @@
 				BA195E261B66F41600712945 /* Images.xcassets in Resources */,
 				BA195E431B68606D00712945 /* explosion_small.caf in Resources */,
 				BA195E1E1B66F41500712945 /* GameScene.sks in Resources */,
+				BA195E541B6B16B400712945 /* o-HEDGE-MAZE-900.png in Resources */,
+				BA195E581B6B180400712945 /* 3_gaengig_3_achsig_quadrat.png in Resources */,
 				BA195E241B66F41600712945 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,11 +271,13 @@
 			files = (
 				BA195E4A1B687DDE00712945 /* MainMenu.m in Sources */,
 				BA195E211B66F41500712945 /* GameViewController.m in Sources */,
+				BA195E4D1B6AE08D00712945 /* Credits.m in Sources */,
 				BA195E191B66F41500712945 /* AppDelegate.m in Sources */,
 				BA195E1C1B66F41500712945 /* GameScene.m in Sources */,
 				BA195E471B6873FF00712945 /* GameWinScene.m in Sources */,
 				BA195E161B66F41500712945 /* main.m in Sources */,
 				BA195E401B684FA100712945 /* GameOverScene.m in Sources */,
+				BA195E501B6AE0C200712945 /* Tutorial.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

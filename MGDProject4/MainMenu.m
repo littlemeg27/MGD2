@@ -8,6 +8,17 @@
 
 #import "MainMenu.h"
 #import "GameScene.h"
+#import "Credits.h"
+#import "Tutorial.h"
+
+@interface MainMenu ()
+
+@property (nonatomic) SKLabelNode *nameLabel;
+@property (nonatomic) SKLabelNode *playLabel;
+@property (nonatomic) SKLabelNode *creditsLabel;
+@property (nonatomic) SKLabelNode *instructionsLabel;
+
+@end
 
 @implementation MainMenu
 
@@ -17,26 +28,36 @@
     {
         self.backgroundColor = [SKColor brownColor];
         
-        SKLabelNode *nameLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        nameLabel.text = @"Labyrinth";
-        nameLabel.fontColor = [SKColor whiteColor];
-        nameLabel.fontSize = 60;
-        nameLabel.position = CGPointMake(CGRectGetMidX(self.frame),800);
-        [self addChild:nameLabel];
+        self.nameLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.nameLabel.text = @"Labyrinth";
+        self.nameLabel.fontColor = [SKColor whiteColor];
+        self.nameLabel.fontSize = 60;
+        self.nameLabel.position = CGPointMake(CGRectGetMidX(self.frame),800);
+        [self addChild:self.nameLabel];
         
-        SKLabelNode *playLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        playLabel.text = @"Play";
-        playLabel.fontColor = [SKColor whiteColor];
-        playLabel.fontSize = 30;
-        playLabel.position = CGPointMake(CGRectGetMidX(self.frame),600);
-        [self addChild:playLabel];
+        self.playLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.playLabel.text = @"Play";
+        self.playLabel.fontColor = [SKColor whiteColor];
+        self.playLabel.fontSize = 30;
+        self.playLabel.name = @"button1";
+        self.playLabel.position = CGPointMake(CGRectGetMidX(self.frame),600);
+        [self addChild:self.playLabel];
         
-        SKLabelNode *creditsLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        creditsLabel.text = @"Credits";
-        creditsLabel.fontColor = [SKColor whiteColor];
-        creditsLabel.fontSize = 30;
-        creditsLabel.position = CGPointMake(CGRectGetMidX(self.frame),500);
-        [self addChild:creditsLabel];
+        self.creditsLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.creditsLabel.text = @"Credits";
+        self.creditsLabel.fontColor = [SKColor whiteColor];
+        self.creditsLabel.fontSize = 30;
+        self.creditsLabel.name = @"button2";
+        self.creditsLabel.position = CGPointMake(CGRectGetMidX(self.frame),500);
+        [self addChild:self.creditsLabel];
+        
+        self.instructionsLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.instructionsLabel.text = @"Tutorial";
+        self.instructionsLabel.fontColor = [SKColor whiteColor];
+        self.instructionsLabel.fontSize = 30;
+        self.instructionsLabel.name = @"button3";
+        self.instructionsLabel.position = CGPointMake(CGRectGetMidX(self.frame),400);
+        [self addChild:self.instructionsLabel];
     }
     return self;
 }
@@ -45,12 +66,27 @@
 {
     for (UITouch *touch in touches)
     {
-        //CGPoint location1 = [touch locationInNode:self];
-        //CGPoint newBPos1 = CGPointMake(location1.x, 350);
-        GameScene *gameScene = [GameScene sceneWithSize:self.size];
-        [self.view presentScene:gameScene transition:[SKTransition fadeWithDuration:1.0]];
+        CGPoint location = [touch locationInNode:self];
+        SKNode *node = [self nodeAtPoint:location];
         
+        if ([node.name isEqualToString:@"button1"])
+        {
+            GameScene *gameScene = [GameScene sceneWithSize:self.size];
+            [self.view presentScene:gameScene transition:[SKTransition fadeWithDuration:1.0]];
+        }
+        else if ([node.name isEqualToString:@"button2"])
+        {
+            Credits *credits = [Credits sceneWithSize:self.size];
+            [self.view presentScene:credits transition:[SKTransition fadeWithDuration:1.0]];
+        }
+        else if  ([node.name isEqualToString:@"button3"])
+        {
+            Tutorial *tutorial = [Tutorial sceneWithSize:self.size];
+            [self.view presentScene:tutorial transition:[SKTransition fadeWithDuration:1.0]];
+        }
     }
+    
+
 }
 
 @end
